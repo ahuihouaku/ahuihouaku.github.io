@@ -4,8 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Aloha Insider</title>
-  
-  <!-- Link to Google Fonts for a better style -->
+
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;500&display=swap" rel="stylesheet">
 
   <style>
@@ -13,10 +12,32 @@
       font-family: 'Quicksand', sans-serif;
       margin: 0;
       padding: 0;
-      background: url('https://raw.githubusercontent.com/ahuihouaku/ahuihou.github.io/main/background.png') no-repeat center center fixed; /* Background image */
-      background-size: cover; /* Make background cover the full screen */
+      position: relative;
       color: #333;
       line-height: 1.6;
+    }
+
+    body::before {
+      content: "";
+      background: url('https://raw.githubusercontent.com/ahuihouaku/ahuihou.github.io/main/background.png') no-repeat center center fixed;
+      background-size: cover;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -2;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.5); /* Soft white filter for subtle background */
+      z-index: -1;
     }
 
     /* Hero Section */
@@ -39,7 +60,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.4); /* Darkened overlay for text visibility */
+      background: rgba(255, 255, 255, 0.3); /* Lightened overlay */
       z-index: 1;
     }
 
@@ -49,7 +70,10 @@
       justify-content: center;
       gap: 1.5rem;
       padding: 1rem 0;
+      position: relative;
+      z-index: 10;
     }
+
     nav a {
       color: #333;
       text-decoration: none;
@@ -57,15 +81,15 @@
       padding: 0.5rem;
     }
 
-    /* Section Styling */
     .section {
       padding: 2rem;
       max-width: 800px;
-      margin: auto;
+      margin: 2rem auto;
       background: rgba(255, 255, 255, 0.9);
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      margin-bottom: 2rem;
       border-radius: 10px;
+      position: relative;
+      z-index: 2;
     }
 
     .discount {
@@ -94,12 +118,12 @@
       font-size: 0.9rem;
     }
 
-    /* Podcast Section at the bottom */
     .podcast-section {
       text-align: center;
       padding: 2rem;
       margin: 3rem 0;
     }
+
     .podcast-section img {
       width: 200px;
       height: 200px;
@@ -109,9 +133,7 @@
   </style>
 </head>
 <body>
-  <header class="hero">
-    <!-- Removed the title "ALOHA INSIDER" from here -->
-  </header>
+  <header class="hero"></header>
 
   <nav>
     <a href="#lessons">Lessons</a>
@@ -148,13 +170,9 @@
     <p>Email: <a href="mailto:ahuihouaku808@gmail.com">ahuihouaku808@gmail.com</a></p>
   </section>
 
-  <!-- Podcast Section at the bottom -->
   <section class="podcast-section" id="podcast">
-    <!-- No title here -->
     <img src="https://raw.githubusercontent.com/ahuihouaku/ahuihou.github.io/main/episode%201%20thumbnail.png" alt="Episode 1 Thumbnail">
-    <!-- Audio Player -->
     <audio controls>
-      <!-- Replace with correct raw URL for your audio file once available -->
       <source src="https://raw.githubusercontent.com/ahuihouaku/ahuihou.github.io/main/episode%201%20introduction.m4a" type="audio/mpeg">
       Your browser does not support the audio element.
     </audio>
