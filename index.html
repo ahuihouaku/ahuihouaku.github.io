@@ -67,14 +67,11 @@
       background-color: #fff0d5;
       border-radius: 8px;
     }
-    .intro-section,
-    .podcast-scroll,
-    .lesson-scroll {
+    .intro-section {
       display: flex;
       justify-content: center;
-      gap: 2rem;
-      flex-wrap: nowrap;
-      overflow-x: auto;
+      gap: 1rem;
+      flex-wrap: wrap;
       padding: 3rem 2rem 1rem;
       background: #fff9ee;
     }
@@ -83,19 +80,12 @@
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       padding: 1.5rem;
-      min-width: 300px;
-      flex: 0 0 300px;
+      width: 280px;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
-      opacity: 0;
-      animation: fadeInUp 0.8s ease forwards;
     }
     .card:hover {
       transform: translateY(-6px);
       box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
-    }
-    @keyframes fadeInUp {
-      0% { opacity: 0; transform: translateY(20px); }
-      100% { opacity: 1; transform: translateY(0); }
     }
     section {
       padding: 3rem 2rem;
@@ -117,10 +107,21 @@
       background-color: #fff8e1;
       border: 2px dashed #ffd54f;
       padding: 2rem;
-      margin: 3rem auto;
-      max-width: 800px;
+      margin-bottom: 2rem;
       text-align: center;
       border-radius: 14px;
+    }
+    .podcast-entry {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      padding: 1rem;
+      margin-bottom: 2rem;
+    }
+    .podcast-entry img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 1rem;
     }
   </style>
 </head>
@@ -143,68 +144,67 @@
       <p>This phrase reflects the spirit of aloha you’ll see on welcome mats, hotels, and signs across Hawaiʻi.</p>
     </div>
     <div class="card">
-      <h3>🎉 Featured Event: Merrie Monarch Festival</h3>
-      <p><strong>📅 Date:</strong> April 2025<br><strong>📍 Location:</strong> Hilo, Hawaiʻi Island</p>
-      <p>The biggest celebration of hula and Hawaiian culture. Hula competitions, art fairs, and a grand parade.</p>
-      <p><a href="https://www.merriemonarch.com/" target="_blank">View Festival Info</a></p>
+      <h3>🎉 Featured Event</h3>
+      <p><strong>Merrie Monarch Festival</strong><br>📅 April 2025<br>📍 Hilo, Hawaiʻi Island</p>
+      <p>Hula competitions, art fairs, and a grand parade celebrating Hawaiian culture.</p>
+      <p><a href="https://www.merriemonarch.com/" target="_blank">View Info</a></p>
     </div>
     <div class="card">
       <h3>🤙 Why Aloha Insider?</h3>
-      <p>We’re not about tourist traps. We help you travel smarter, eat better, learn local customs, and connect with the real Hawaiʻi.</p>
-      <p>Guided by a local Native Hawaiian educator and travel expert. 🌈</p>
+      <p>Real advice from a Native Hawaiian educator. No tourist traps. Just authentic culture, food, and experiences.</p>
     </div>
   </section>
 
-  <section class="lesson-scroll">
-    <div class="card discount">
-      <h3>🎉 Direct Lessons = 10% Off!</h3>
-      <p>Book directly with me and save 10% compared to Italki pricing! Same high-quality lessons, just more aloha for your wallet 🌺</p>
-      <p><strong>Email:</strong> <a href="mailto:kirkishida@alohainsider.net">kirkishida@alohainsider.net</a></p>
-    </div>
-    <div class="card">
-      <h3>🧠 Italki Lessons</h3>
-      <p>Join me on Italki to learn Hawaiian Pidgin, English with local flavor, and cultural do's and don'ts. Lessons are 1-on-1 and tailored to Japanese travelers and language lovers.</p>
-      <p><strong><a href="https://www.italki.com/en/teacher/26705575">Book a lesson</a></strong></p>
-    </div>
+  <section class="discount">
+    <h3>🎉 Direct Lessons = 10% Off!</h3>
+    <p>Book directly with me and save 10% compared to Italki pricing! Same high-quality lessons, just more aloha for your wallet 🌺</p>
+    <p><strong>Email:</strong> <a href="mailto:kirkishida@alohainsider.net">kirkishida@alohainsider.net</a></p>
+  </section>
+
+  <section id="lessons">
+    <h3>🧠 Italki Lessons</h3>
+    <p>Join me on Italki to learn Hawaiian Pidgin, English with local flavor, and cultural do's and don'ts. Lessons are 1-on-1 and tailored to Japanese travelers and language lovers.</p>
+    <p><strong><a href="https://www.italki.com/en/teacher/26705575">Book a lesson</a></strong></p>
+  </section>
+
+  <section id="newsletter">
+    <h3>📬 Aloha Insider Newsletter</h3>
+    <p>Get insider tips on Hawaiian culture, local events, food, and hidden gems delivered every 2 weeks. Available in English & Japanese.</p>
+    <p><strong>🔗 <a href="#">Sign up here</a></strong></p>
+    <p><strong>📰 <a href="newsletter-march2025.html">Read the March 2025 Newsletter</a></strong></p>
   </section>
 
   <section id="podcast">
     <h3>🎙️ Aloha Insider Podcast</h3>
     <p>Short episodes about Hawaiian Pidgin, culture, and travel — real local insight in 2 minutes!</p>
-    <div class="podcast-scroll">
-      <div class="card">
-        <img src="https://raw.githubusercontent.com/ahuihouaku/ahuihou.github.io/main/episode%201%20thumbnail.png" alt="Episode 1 Thumbnail" width="100%">
-        <h4>Episode 1</h4>
-        <p>Intro to Hawaiian Pidgin</p>
-        <audio controls>
-          <source src="https://raw.githubusercontent.com/ahuihouaku/ahuihou.github.io/main/episode%201%20introduction.m4a" type="audio/mpeg">
-        </audio>
-      </div>
-      <div class="card">
-        <img src="https://raw.githubusercontent.com/ahuihouaku/ahuihou.github.io/main/pe2tn.png" alt="Episode 2 Thumbnail" width="100%">
-        <h4>Episode 2</h4>
-        <p>Everyday Pidgin + Phrase Breakdown</p>
-        <audio controls>
-          <source src="https://raw.githubusercontent.com/ahuihouaku/ahuihou.github.io/main/pe2.m4a" type="audio/mpeg">
-        </audio>
-      </div>
-      <div class="card">
-        <img src="https://raw.githubusercontent.com/ahuihouaku/ahuihou.github.io/main/pe3tn.png" alt="Episode 3 Thumbnail" width="100%">
-        <h4>Episode 3</h4>
-        <p>Pidgin in Real Tourist Settings</p>
-        <audio controls>
-          <source src="https://raw.githubusercontent.com/ahuihouaku/ahuihou.github.io/main/pe3.m4a" type="audio/mpeg">
-        </audio>
-      </div>
+    <div class="podcast-entry">
+      <img src="https://raw.githubusercontent.com/ahuihouaku/ahuihou.github.io/main/episode%201%20thumbnail.png" alt="Episode 1 Thumbnail">
+      <p><strong>Episode 1:</strong> Intro to Hawaiian Pidgin</p>
+      <audio controls>
+        <source src="https://raw.githubusercontent.com/ahuihouaku/ahuihou.github.io/main/episode%201%20introduction.m4a" type="audio/mpeg">
+      </audio>
+    </div>
+    <div class="podcast-entry">
+      <img src="https://raw.githubusercontent.com/ahuihouaku/ahuihou.github.io/main/pe2tn.png" alt="Episode 2 Thumbnail">
+      <p><strong>Episode 2:</strong> Everyday Pidgin + Phrase Breakdown</p>
+      <audio controls>
+        <source src="https://raw.githubusercontent.com/ahuihouaku/ahuihou.github.io/main/pe2.m4a" type="audio/mpeg">
+      </audio>
+    </div>
+    <div class="podcast-entry">
+      <img src="https://raw.githubusercontent.com/ahuihouaku/ahuihou.github.io/main/pe3tn.png" alt="Episode 3 Thumbnail">
+      <p><strong>Episode 3:</strong> Pidgin in Real Tourist Settings</p>
+      <audio controls>
+        <source src="https://raw.githubusercontent.com/ahuihouaku/ahuihou.github.io/main/pe3.m4a" type="audio/mpeg">
+      </audio>
     </div>
   </section>
 
   <section id="about">
     <h3>🌈 About Me</h3>
-    <p>Aloha, my name is Kirk, and I’ve been passionate about helping people for as long as I can remember. My very first job in high school was about supporting students — and that focus has followed me through every role I’ve had: part-time teacher, college planning advisor, college instructor, and more. Whether it’s guiding someone through their education or helping them feel confident in a new place, I’ve always loved being part of someone’s journey.</p>
-    <p>Travel has also been a huge part of my life. I’ve been exploring the world since I was a baby, but it was visiting places like Italy, France, Germany, Canada, Korea, and especially Japan that gave me a deeper understanding of what it means to be a guest in someone else’s home. I loved learning about local customs, trying new foods, and seeing how culture shapes daily life — and I bring that same mindset to helping visitors experience Hawaiʻi.</p>
-    <p>I created Aloha Insider because I want travelers — especially those visiting from Japan — to have the kind of experience they dream about when they imagine Hawaiʻi. Yes, it’s a beautiful place, but like any destination, there are things people might not know: high prices, tourist traps, tipping confusion, unsafe areas, or spending time and money in places that aren’t worth it.</p>
-    <p>As a parent, I’ve also discovered a whole new side of travel — one I never fully appreciated before. I now know how important it is to plan trips that include zoos, aquariums, safe beaches, playgrounds, and quiet family moments. I’ve traveled for nightlife with friends, cultural exploration, and now as a family. Because of that, I understand the different ways people experience Hawaiʻi, and I can help plan the perfect trip for any kind of traveler — whether it’s solo, with friends, or with kids in tow.</p>
+    <p>Aloha, my name is Kirk, and I’ve been passionate about helping people for as long as I can remember. My very first job in high school was about supporting students — and that focus has followed me through every role I’ve had: part-time teacher, college planning advisor, college instructor, and more.</p>
+    <p>Travel has also been a huge part of my life. I’ve been exploring the world since I was a baby, but it was visiting places like Italy, France, Germany, Canada, Korea, and especially Japan that gave me a deeper understanding of what it means to be a guest in someone else’s home.</p>
+    <p>I created Aloha Insider to help travelers — especially those from Japan — experience the Hawaiʻi I know and love. Whether it’s your first visit or your tenth, I’m here to help you make the most of your trip, with local insights, cultural etiquette, and practical tips.</p>
   </section>
 
   <section id="contact">
