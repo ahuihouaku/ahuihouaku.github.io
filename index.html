@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Aloha Insider</title>
-
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;500&display=swap" rel="stylesheet">
-
   <style>
     body {
       font-family: 'Quicksand', sans-serif;
@@ -18,209 +15,54 @@
       line-height: 1.7;
       background-color: #fafafa;
     }
-
-    body::before {
-      content: "";
-      background: url('https://raw.githubusercontent.com/ahuihouaku/ahuihou.github.io/main/background.png') no-repeat center center fixed;
-      background-size: cover;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -3;
-      opacity: 0.15;
-    }
-
-    header.hero {
-      height: 75vh;
-      background-image: url('https://raw.githubusercontent.com/ahuihouaku/ahuihou.github.io/main/hero.png');
-      background-attachment: fixed;
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: top center;
+    .intro-section {
       display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      color: white;
-      position: relative;
-    }
-
-    nav {
-      background: #ffe4b5;
-      display: flex;
-      justify-content: center;
       flex-wrap: wrap;
-      gap: 1.5rem;
-      padding: 1rem 0;
-      position: relative;
-      z-index: 10;
+      justify-content: center;
+      gap: 2rem;
+      padding: 3rem 2rem 1rem;
+      background: #fff9ee;
     }
-
-    nav a {
-      color: #2c3e50;
-      text-decoration: none;
-      font-weight: bold;
-      padding: 0.5rem 1rem;
-      transition: all 0.3s ease;
-    }
-
-    nav a:hover {
-      background-color: #fff0d5;
-      border-radius: 8px;
-    }
-
-    .section {
-      padding: 3rem 2rem;
-      max-width: 900px;
-      margin: 3rem auto;
-      background: linear-gradient(135deg, #ffffff 0%, #f7f7f7 100%);
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-      border-radius: 16px;
-      position: relative;
-      z-index: 2;
-      transition: transform 0.3s ease;
-    }
-
-    .section:hover {
-      transform: translateY(-5px);
-    }
-
-    .section h3 {
-      font-size: 1.8rem;
-      color: #2c3e50;
-      margin-bottom: 1rem;
-      border-bottom: 2px solid #ffe4b5;
-      display: inline-block;
-      padding-bottom: 0.3rem;
-    }
-
-    .discount {
-      background-color: #fff8e1;
-      border: 2px dashed #ffd54f;
-      padding: 2rem;
-      margin: 3rem auto;
-      max-width: 800px;
-      text-align: center;
-      border-radius: 14px;
-      box-shadow: 0 5px 12px rgba(0, 0, 0, 0.05);
-    }
-
-    .discount h3 {
-      margin-top: 0;
-      color: #856404;
-    }
-
-    .discount p {
-      font-size: 1.1rem;
-    }
-
-    .podcast-entry {
-      margin-bottom: 2rem;
-      text-align: center;
-    }
-
-    .podcast-entry img {
-      display: block;
-      margin: 0 auto 10px;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    footer {
-      background: #f0f0f0;
-      text-align: center;
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       padding: 1.5rem;
-      font-size: 0.9rem;
-      color: #777;
+      max-width: 320px;
+      flex: 1 1 300px;
+    }
+    .card h3 {
+      margin-top: 0;
+      color: #d17b00;
+    }
+    .card p {
+      margin: 0.5rem 0;
+    }
+    .card a {
+      color: #007BFF;
+      text-decoration: none;
     }
   </style>
 </head>
 <body>
-  <header class="hero"></header>
-
-  <nav>
-    <a href="#lessons">Lessons</a>
-    <a href="#newsletter">Newsletter</a>
-    <a href="#podcast">Podcast</a>
-    <a href="#about">About</a>
-    <a href="map.html">Hawai'i On Screen</a>
-    <a href="#contact">Contact</a>
-  </nav>
-
-  <section class="section" id="lessons">
-    <h3>🧠 Italki Lessons</h3>
-    <p>Join me on Italki to learn Hawaiian Pidgin, English with local flavor, and cultural do's and don'ts. Lessons are 1-on-1 and tailored to Japanese travelers and language lovers.</p>
-    <p><strong>🔗 <a href="https://www.italki.com/en/teacher/26705575">Book a lesson</a></strong></p>
-    <p><strong>🌟 Why Book With Me?</strong><br>
-    I’ve traveled the world, planned trips with friends, family, and now as a parent. I know the good spots, the hidden gems, and how to avoid wasting your time and money. I want you to experience Hawaiʻi the way locals do — with care, culture, and aloha.</p>
-  </section>
-
-  <section class="discount">
-    <h3>🎉 Direct Lessons = 10% Off!</h3>
-    <p>Book directly with me and save 10% compared to Italki pricing! Same high-quality lessons, just more aloha for your wallet 🌺</p>
-    <p><strong>Email: <a href="mailto:kirkishida@alohainsider.net">kirkishida@alohainsider.net</a></strong></p>
-  </section>
-
-  <section class="section" id="newsletter">
-    <h3>📬 Aloha Insider Newsletter</h3>
-    <p>Get insider tips on Hawaiian culture, local events, food, and hidden gems delivered every 2 weeks. Available in English & Japanese.</p>
-    <p><strong>🔗 <a href="#">Sign up here</a></strong></p>
-    <p><strong>📰 <a href="newsletter-march2025.html">Read the March 2025 Newsletter</a></strong></p>
-  </section>
-
-  <section class="section" id="podcast">
-    <h3>🎙️ Aloha Insider Podcast</h3>
-    <p>Listen to short episodes about Hawaiian Pidgin, culture, and travel — recorded to give you real local insights in just 2 minutes!</p>
-
-    <div class="podcast-entry">
-      <img src="https://raw.githubusercontent.com/ahuihouaku/ahuihou.github.io/main/episode%201%20thumbnail.png" alt="Episode 1 Thumbnail" width="200">
-      <p><strong>Episode 1:</strong> Intro to Hawaiian Pidgin</p>
-      <audio controls>
-        <source src="https://raw.githubusercontent.com/ahuihouaku/ahuihou.github.io/main/episode%201%20introduction.m4a" type="audio/mpeg">
-        Your browser does not support the audio element.
-      </audio>
+  <section class="intro-section">
+    <div class="card">
+      <h3>🌿 Hawaiian Word of the Month</h3>
+      <p><strong>E Komo Mai</strong> – "Welcome"</p>
+      <p>日本語: 「ようこそ」</p>
+      <p>This phrase reflects the spirit of aloha you’ll see on welcome mats, hotels, and signs across Hawaiʻi.</p>
     </div>
-
-    <div class="podcast-entry">
-      <img src="https://raw.githubusercontent.com/ahuihouaku/ahuihou.github.io/main/pe2tn.png" alt="Episode 2 Thumbnail" width="200">
-      <p><strong>Episode 2:</strong> Everyday Pidgin + Phrase Breakdown</p>
-      <audio controls>
-        <source src="https://raw.githubusercontent.com/ahuihouaku/ahuihou.github.io/main/pe2.m4a" type="audio/mpeg">
-        Your browser does not support the audio element.
-      </audio>
+    <div class="card">
+      <h3>🎉 Featured Event: Merrie Monarch Festival</h3>
+      <p><strong>📅 Date:</strong> April 2025<br><strong>📍 Location:</strong> Hilo, Hawaiʻi Island</p>
+      <p>The biggest celebration of hula and Hawaiian culture. Hula competitions, art fairs, and a grand parade.</p>
+      <p><a href="https://www.merriemonarch.com/" target="_blank">View Festival Info</a></p>
     </div>
-
-    <div class="podcast-entry">
-      <img src="https://raw.githubusercontent.com/ahuihouaku/ahuihou.github.io/main/pe3tn.png" alt="Episode 3 Thumbnail" width="200">
-      <p><strong>Episode 3:</strong> Pidgin in Real Tourist Settings</p>
-      <audio controls>
-        <source src="https://raw.githubusercontent.com/ahuihouaku/ahuihou.github.io/main/pe3.m4a" type="audio/mpeg">
-        Your browser does not support the audio element.
-      </audio>
+    <div class="card">
+      <h3>🤙 Why Aloha Insider?</h3>
+      <p>We’re not about tourist traps. We help you travel smarter, eat better, learn local customs, and connect with the real Hawaiʻi.</p>
+      <p>Guided by a local Native Hawaiian educator and travel expert. 🌈</p>
     </div>
   </section>
-
-  <section class="section" id="about">
-    <h3>🌈 About Me</h3>
-    <p>Aloha, my name is Kirk, and I’ve been passionate about helping people for as long as I can remember. My very first job in high school was about supporting students — and that focus has followed me through every role I’ve had: part-time teacher, college planning advisor, college instructor, and more. Whether it’s guiding someone through their education or helping them feel confident in a new place, I’ve always loved being part of someone’s journey.</p>
-
-    <p>Travel has also been a huge part of my life. I’ve been exploring the world since I was a baby, but it was visiting places like Italy, France, Germany, Canada, Korea, and especially Japan that gave me a deeper understanding of what it means to be a guest in someone else’s home. I loved learning about local customs, trying new foods, and seeing how culture shapes daily life — and I bring that same mindset to helping visitors experience Hawaiʻi.</p>
-
-    <p>I created Aloha Insider because I want travelers — especially those visiting from Japan — to have the kind of experience they dream about when they imagine Hawaiʻi. Yes, it’s a beautiful place, but like any destination, there are things people might not know: high prices, tourist traps, tipping confusion, unsafe areas, or spending time and money in places that aren’t worth it.</p>
-
-    <p>As a parent, I’ve also discovered a whole new side of travel — one I never fully appreciated before. I now know how important it is to plan trips that include zoos, aquariums, safe beaches, playgrounds, and quiet family moments. I’ve traveled for nightlife with friends, cultural exploration, and now as a family. Because of that, I understand the different ways people experience Hawaiʻi, and I can help plan the perfect trip for any kind of traveler — whether it’s solo, with friends, or with kids in tow.</p>
-  </section>
-
-  <section class="section" id="contact">
-    <h3>📩 Contact Me</h3>
-    <p>Email: <a href="mailto:kirkishida@alohainsider.net">kirkishida@alohainsider.net</a></p>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Aloha Insider. All rights reserved.</p>
-  </footer>
 </body>
 </html>
