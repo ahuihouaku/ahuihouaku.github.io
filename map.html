@@ -35,14 +35,17 @@
       margin-bottom: 0.25rem;
     }
     .back-button {
-      display: inline-block;
-      margin-top: 1rem;
-      padding: 0.5rem 1rem;
-      background-color: #ffd89b;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      padding: 0.7rem 1.2rem;
+      background-color: #ffe4b5;
       color: #333;
       text-decoration: none;
       border-radius: 8px;
       font-weight: bold;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      z-index: 1001;
       transition: background-color 0.3s ease;
     }
     .back-button:hover {
@@ -52,35 +55,49 @@
       position: absolute;
       top: 100px;
       left: 20px;
-      background: #fff;
-      padding: 1rem;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      background: rgba(255, 255, 255, 0.95);
+      padding: 1.2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
       max-height: 70vh;
       overflow-y: auto;
       z-index: 1000;
+      transition: transform 0.3s ease;
     }
     .sidebar h2 {
       font-size: 1.2rem;
       margin-top: 0;
+      color: #d17b00;
+      text-align: center;
     }
     .sidebar ul {
       list-style: none;
       padding: 0;
     }
     .sidebar li {
-      margin: 0.5rem 0;
+      margin: 0.4rem 0;
       cursor: pointer;
       color: #007BFF;
       text-decoration: underline;
+      transition: color 0.3s;
+    }
+    .sidebar li:hover {
+      color: #004f9e;
     }
     .sidebar button {
+      display: block;
+      width: 100%;
       margin-top: 1rem;
       background: #ffe4b5;
       border: none;
-      padding: 0.5rem 1rem;
+      padding: 0.6rem 1rem;
       border-radius: 6px;
+      font-weight: bold;
       cursor: pointer;
+      transition: background 0.3s;
+    }
+    .sidebar button:hover {
+      background: #ffd280;
     }
   </style>
 </head>
@@ -88,7 +105,6 @@
   <header>
     <h1>🎬 Explore Oʻahu in Movies & TV</h1>
     <p>Click a marker to see famous filming locations across the island!</p>
-    <a class="back-button" href="index.html">← Back to Main Page</a>
   </header>
 
   <div class="sidebar">
@@ -96,6 +112,8 @@
     <ul id="filterList"></ul>
     <button onclick="resetMap()">Clear Filter</button>
   </div>
+
+  <a class="back-button" href="index.html">← Back to Main Page</a>
 
   <div id="map"></div>
 
@@ -119,6 +137,7 @@
     }).addTo(map);
 
     const locations = [
+      // Movie Locations
       {
         title: "📽️ 50 First Dates",
         content: "Sea Life Park – where Henry first meets Lucy. <a href='https://goo.gl/maps/wZsbW1nbcCDzWmh49' target='_blank'>View on Google Maps</a>",
@@ -148,6 +167,37 @@
         content: "Various beach scenes filmed near Mokulēʻia on the North Shore.",
         coords: [21.5766, -158.2264],
         category: "Lost"
+      },
+      // Popular Tourist Destinations
+      {
+        title: "🌊 Waikīkī Beach",
+        content: "One of the most famous beaches in the world for surfing, swimming, and nightlife.",
+        coords: [21.2766, -157.8275],
+        category: "Tourist Spot"
+      },
+      {
+        title: "🌋 Diamond Head",
+        content: "Iconic volcanic crater offering scenic hiking and views of Honolulu.",
+        coords: [21.2622, -157.8059],
+        category: "Tourist Spot"
+      },
+      {
+        title: "🇺🇸 Pearl Harbor",
+        content: "Historic site including the USS Arizona Memorial and museums.",
+        coords: [21.3649, -157.9494],
+        category: "Tourist Spot"
+      },
+      {
+        title: "🐠 Hanauma Bay",
+        content: "Marine life conservation area ideal for snorkeling and swimming.",
+        coords: [21.2690, -157.6938],
+        category: "Tourist Spot"
+      },
+      {
+        title: "🌄 Nuʻuanu Pali Lookout",
+        content: "Panoramic views of windward Oʻahu and historical battlefield site.",
+        coords: [21.3706, -157.7991],
+        category: "Tourist Spot"
       }
     ];
 
@@ -170,6 +220,7 @@
     function buildFilterList() {
       const categories = [...new Set(locations.map(loc => loc.category))];
       const ul = document.getElementById("filterList");
+      ul.innerHTML = "";
       categories.forEach(category => {
         const li = document.createElement("li");
         li.textContent = category;
