@@ -11,7 +11,6 @@
       font-family: 'Quicksand', sans-serif;
       margin: 0;
       padding: 0;
-      position: relative;
       color: #2c3e50;
       line-height: 1.7;
       background-color: #fafafa;
@@ -36,7 +35,6 @@
       background-repeat: no-repeat;
       background-position: top center;
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
@@ -60,6 +58,9 @@
       font-weight: bold;
       padding: 0.5rem 1rem;
       transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
     }
     nav a:hover,
     nav a.active {
@@ -72,31 +73,56 @@
       gap: 2rem;
       padding: 1rem;
       background: #fff8dc;
-      text-align: center;
-      font-size: 1rem;
       font-weight: bold;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      animation: fadeInDown 1s ease-in-out;
     }
-    .info-bar span {
-      display: inline-block;
-      transition: all 0.3s ease;
-    }
-    @keyframes fadeInDown {
-      from { opacity: 0; transform: translateY(-20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+    .info-bar span { display: inline-block; }
     .surf-cam {
       text-align: center;
       margin: 2rem auto;
-      max-width: 900px;
+      max-width: 700px;
     }
     .surf-cam iframe {
       width: 100%;
-      height: 400px;
+      height: 250px;
       border: none;
       border-radius: 12px;
       box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    }
+    section {
+      padding: 3rem 2rem;
+      max-width: 900px;
+      margin: 3rem auto;
+      background: linear-gradient(135deg, #ffffff 0%, #f7f7f7 100%);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+      border-radius: 16px;
+    }
+    section h3 {
+      font-size: 1.8rem;
+      color: #2c3e50;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #ffe4b5;
+      display: inline-block;
+      padding-bottom: 0.3rem;
+    }
+    .discount {
+      background-color: #fff8e1;
+      border: 2px dashed #ffd54f;
+      padding: 2rem;
+      margin: 3rem auto;
+      max-width: 800px;
+      text-align: center;
+      border-radius: 14px;
+    }
+    .podcast-entry {
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+    .podcast-entry img {
+      display: block;
+      margin: 0 auto 10px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
   </style>
 </head>
@@ -104,13 +130,12 @@
   <header class="hero"></header>
 
   <nav>
-    <a href="index.html">Home</a>
-    <a href="#lessons">Lessons</a>
-    <a href="#newsletter">Newsletter</a>
-    <a href="#podcast">Podcast</a>
-    <a href="#about">About</a>
-    <a href="map.html">Hawai'i On Screen</a>
-    <a href="#contact">Contact</a>
+    <a href="#lessons"><i class="fa-solid fa-chalkboard-user"></i> Lessons</a>
+    <a href="#newsletter"><i class="fa-regular fa-newspaper"></i> Newsletter</a>
+    <a href="#podcast"><i class="fa-solid fa-podcast"></i> Podcast</a>
+    <a href="#about"><i class="fa-solid fa-user"></i> About</a>
+    <a href="map.html"><i class="fa-solid fa-map-location-dot"></i> Hawai'i On Screen</a>
+    <a href="#contact"><i class="fa-solid fa-envelope"></i> Contact</a>
   </nav>
 
   <div class="info-bar">
@@ -121,8 +146,73 @@
 
   <section class="surf-cam">
     <h2>🌊 Live Surf Cam – Waikīkī Beach</h2>
-    <iframe src="https://www.youtube.com/embed/2bSGMo7GjJ0" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/live_stream?channel=UCVgkRqpXlz0Bb2pzZBfO7tw" allowfullscreen></iframe>
   </section>
+
+  <section id="lessons">
+    <h3>🧠 Italki Lessons</h3>
+    <p>Join me on Italki to learn Hawaiian Pidgin, English with local flavor, and cultural do's and don'ts. Lessons are 1-on-1 and tailored to Japanese travelers and language lovers.</p>
+    <p><strong>🔗 <a href="https://www.italki.com/en/teacher/26705575">Book a lesson</a></strong></p>
+  </section>
+
+  <section class="discount">
+    <h3>🎉 Direct Lessons = 10% Off!</h3>
+    <p>Book directly with me and save 10% compared to Italki pricing! Same high-quality lessons, just more aloha for your wallet 🌺</p>
+    <p><strong>Email: <a href="mailto:kirkishida@alohainsider.net">kirkishida@alohainsider.net</a></strong></p>
+  </section>
+
+  <section id="newsletter">
+    <h3>📬 Aloha Insider Newsletter</h3>
+    <p>Get insider tips on Hawaiian culture, local events, food, and hidden gems delivered every 2 weeks. Available in English & Japanese.</p>
+    <p><strong>🔗 <a href="#">Sign up here</a></strong></p>
+    <p><strong>📰 <a href="newsletter-march2025.html">Read the March 2025 Newsletter</a></strong></p>
+  </section>
+
+  <section id="podcast">
+    <h3>🎙️ Aloha Insider Podcast</h3>
+    <p>Listen to short episodes about Hawaiian Pidgin, culture, and travel — recorded to give you real local insights in just 2 minutes!</p>
+    <div class="podcast-entry">
+      <img src="https://raw.githubusercontent.com/ahuihouaku/ahuihou.github.io/main/episode%201%20thumbnail.png" alt="Episode 1 Thumbnail" width="200">
+      <p><strong>Episode 1:</strong> Intro to Hawaiian Pidgin</p>
+      <audio controls>
+        <source src="https://raw.githubusercontent.com/ahuihouaku/ahuihou.github.io/main/episode%201%20introduction.m4a" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+    </div>
+    <div class="podcast-entry">
+      <img src="https://raw.githubusercontent.com/ahuihouaku/ahuihou.github.io/main/pe2tn.png" alt="Episode 2 Thumbnail" width="200">
+      <p><strong>Episode 2:</strong> Everyday Pidgin + Phrase Breakdown</p>
+      <audio controls>
+        <source src="https://raw.githubusercontent.com/ahuihouaku/ahuihou.github.io/main/pe2.m4a" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+    </div>
+    <div class="podcast-entry">
+      <img src="https://raw.githubusercontent.com/ahuihouaku/ahuihou.github.io/main/pe3tn.png" alt="Episode 3 Thumbnail" width="200">
+      <p><strong>Episode 3:</strong> Pidgin in Real Tourist Settings</p>
+      <audio controls>
+        <source src="https://raw.githubusercontent.com/ahuihouaku/ahuihou.github.io/main/pe3.m4a" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+    </div>
+  </section>
+
+  <section id="about">
+    <h3>🌈 About Me</h3>
+    <p>Aloha, my name is Kirk, and I’ve been passionate about helping people for as long as I can remember. My very first job in high school was about supporting students — and that focus has followed me through every role I’ve had: part-time teacher, college planning advisor, college instructor, and more. Whether it’s guiding someone through their education or helping them feel confident in a new place, I’ve always loved being part of someone’s journey.</p>
+    <p>Travel has also been a huge part of my life. I’ve been exploring the world since I was a baby, but it was visiting places like Italy, France, Germany, Canada, Korea, and especially Japan that gave me a deeper understanding of what it means to be a guest in someone else’s home. I loved learning about local customs, trying new foods, and seeing how culture shapes daily life — and I bring that same mindset to helping visitors experience Hawaiʻi.</p>
+    <p>I created Aloha Insider because I want travelers — especially those visiting from Japan — to have the kind of experience they dream about when they imagine Hawaiʻi. Yes, it’s a beautiful place, but like any destination, there are things people might not know: high prices, tourist traps, tipping confusion, unsafe areas, or spending time and money in places that aren’t worth it.</p>
+    <p>As a parent, I’ve also discovered a whole new side of travel — one I never fully appreciated before. I now know how important it is to plan trips that include zoos, aquariums, safe beaches, playgrounds, and quiet family moments. I’ve traveled for nightlife with friends, cultural exploration, and now as a family. Because of that, I understand the different ways people experience Hawaiʻi, and I can help plan the perfect trip for any kind of traveler — whether it’s solo, with friends, or with kids in tow.</p>
+  </section>
+
+  <section id="contact">
+    <h3>📩 Contact Me</h3>
+    <p>Email: <a href="mailto:kirkishida@alohainsider.net">kirkishida@alohainsider.net</a></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Aloha Insider. All rights reserved.</p>
+  </footer>
 
   <script>
     function updateTime() {
