@@ -67,31 +67,11 @@
       background-color: #fff0d5;
       border-radius: 8px;
     }
-    .intro-section {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-      padding: 3rem 2rem 1rem;
-      background: #fff9ee;
-    }
-    .card {
-      background: #ffffffcc;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      padding: 1.5rem;
-      width: 280px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
-    }
     section {
       padding: 3rem 2rem;
       max-width: 900px;
       margin: 3rem auto;
-      background: linear-gradient(135deg, #ffffff, #f7f7f7);
+      background: linear-gradient(135deg, #fffef9, #fef6e4);
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
       border-radius: 16px;
     }
@@ -124,43 +104,52 @@
     .trip-planning a:hover {
       background: #ef6c00;
     }
-    .podcast-grid {
+    .intro-section {
       display: flex;
-      gap: 1rem;
       flex-wrap: wrap;
-      justify-content: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 3rem 1rem 1rem;
+      background: #fff9ee;
     }
-    .podcast-entry {
+    .card {
       background: #fff;
       border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-      padding: 1rem;
-      width: 280px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 1.5rem;
+      flex: 1 1 calc(33.333% - 1rem);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: fadeInUp 0.8s ease forwards;
+      opacity: 0;
     }
-    .podcast-entry img {
-      width: 100%;
-      border-radius: 8px;
-      margin-bottom: 1rem;
+    @media (max-width: 768px) {
+      .card {
+        flex: 1 1 100%;
+      }
     }
-    audio {
-      width: 100%;
+    .card:nth-child(1) { animation-delay: 0.2s; }
+    .card:nth-child(2) { animation-delay: 0.4s; }
+    .card:nth-child(3) { animation-delay: 0.6s; }
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    }
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
   <header class="hero"></header>
   <nav>
-    <a href="#services"><i class="fa-solid fa-chalkboard-user"></i> Services</a>
+    <a href="#trip-planning"><i class="fa-solid fa-map-signs"></i> Trip Planning</a>
+    <a href="#lessons"><i class="fa-solid fa-chalkboard-user"></i> Lessons</a>
     <a href="#newsletter"><i class="fa-regular fa-newspaper"></i> Newsletter</a>
     <a href="#podcast"><i class="fa-solid fa-podcast"></i> Podcast</a>
     <a href="#about"><i class="fa-solid fa-user"></i> About</a>
-    <a href="map.html"><i class="fa-solid fa-map-location-dot"></i> Hawai'i On Screen</a>
     <a href="#contact"><i class="fa-solid fa-envelope"></i> Contact</a>
   </nav>
-
   <section class="intro-section">
     <div class="card">
       <h3>🌿 Hawaiian Word of the Month</h3>
@@ -169,56 +158,52 @@
       <p>This phrase reflects the spirit of aloha you’ll see on welcome mats, hotels, and signs across Hawaiʻi.</p>
     </div>
     <div class="card">
-      <h3>🎉 Featured Event</h3>
-      <p><strong>Merrie Monarch Festival</strong><br>📅 April 2025<br>📍 Hilo, Hawaiʻi Island</p>
-      <p>Hula competitions, art fairs, and a grand parade celebrating Hawaiian culture.</p>
-      <p><a href="https://www.merriemonarch.com/" target="_blank">View Info</a></p>
+      <h3>🎉 Featured Event: Merrie Monarch Festival</h3>
+      <p><strong>📅 Date:</strong> April 2025<br><strong>📍 Location:</strong> Hilo, Hawaiʻi Island</p>
+      <p>The biggest celebration of hula and Hawaiian culture. Hula competitions, art fairs, and a grand parade.</p>
+      <p><a href="https://www.merriemonarch.com/" target="_blank">View Festival Info</a></p>
     </div>
     <div class="card">
       <h3>🤙 Why Aloha Insider?</h3>
-      <p>Real advice from a Native Hawaiian educator. No tourist traps. Just authentic culture, food, and experiences.</p>
+      <p>We’re not about tourist traps. We help you travel smarter, eat better, learn local customs, and connect with the real Hawaiʻi.</p>
+      <p>Guided by a local Native Hawaiian educator and travel expert. 🌈</p>
     </div>
   </section>
-
-  <section class="trip-planning">
-    <h3>🌺 Book a Personalized Hawaiʻi Trip</h3>
-    <p>Let us help you plan the perfect Hawaiian adventure — authentic, local, and stress-free. Share your needs, and we’ll take care of the rest.</p>
-    <a href="https://forms.gle/your-google-form-link" target="_blank">Plan My Trip</a>
+  <section id="trip-planning" class="trip-planning">
+    <h3>🌴 Plan Your Perfect Trip to Hawaiʻi</h3>
+    <p>Want a customized experience based on your interests, time, and budget? Let me help you design a unique Hawaiʻi trip, whether it's your first visit or you're coming back for more!</p>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfqdxhJtHQpgn5kzQpgLZVzw8nAaO3vxIbmznR_CuO5HHPi9w/viewform" target="_blank">Start Trip Planning</a>
   </section>
-
-  <section id="services">
-    <h3>🎓 Lessons & Travel Guidance</h3>
-    <p>Book 1-on-1 Italki lessons to learn Hawaiian Pidgin, English with local flavor, or get personalized advice for your visit.</p>
-    <p><strong><a href="https://www.italki.com/en/teacher/26705575">Book a lesson on Italki</a></strong></p>
+  <section id="lessons">
+    <h3>📘 Hawaiian Pidgin & Cultural Lessons</h3>
+    <p>Learn Hawaiian Pidgin and travel do's & don'ts with me! My Italki lessons are tailored to Japanese travelers and language lovers.</p>
+    <p><a href="https://www.italki.com/en/teacher/26705575" target="_blank">Book on Italki</a></p>
   </section>
-
   <section id="newsletter">
     <h3>📬 Aloha Insider Newsletter</h3>
     <p>Get insider tips on Hawaiian culture, local events, food, and hidden gems delivered every 2 weeks. Available in English & Japanese.</p>
-    <p><strong>🔗 <a href="#">Sign up here</a></strong></p>
-    <p><strong>📰 <a href="newsletter-march2025.html">Read the March 2025 Newsletter</a></strong></p>
+    <p><a href="#">Sign up here</a></p>
+    <p><a href="newsletter-march2025.html">Read the March 2025 Newsletter</a></p>
   </section>
-
   <section id="podcast">
     <h3>🎙️ Aloha Insider Podcast</h3>
-    <p>Short episodes about Hawaiian Pidgin, culture, and travel — real local insight in 2 minutes!</p>
-    <div class="podcast-grid">
-      <div class="podcast-entry">
-        <img src="https://raw.githubusercontent.com/ahuihouaku/ahuihou.github.io/main/episode%201%20thumbnail.png" alt="Episode 1 Thumbnail">
+    <div class="intro-section">
+      <div class="card">
+        <img src="https://raw.githubusercontent.com/ahuihouaku/ahuihou.github.io/main/episode%201%20thumbnail.png" alt="Episode 1 Thumbnail" width="100%">
         <p><strong>Episode 1:</strong> Intro to Hawaiian Pidgin</p>
         <audio controls>
           <source src="https://raw.githubusercontent.com/ahuihouaku/ahuihou.github.io/main/episode%201%20introduction.m4a" type="audio/mpeg">
         </audio>
       </div>
-      <div class="podcast-entry">
-        <img src="https://raw.githubusercontent.com/ahuihouaku/ahuihou.github.io/main/pe2tn.png" alt="Episode 2 Thumbnail">
+      <div class="card">
+        <img src="https://raw.githubusercontent.com/ahuihouaku/ahuihou.github.io/main/pe2tn.png" alt="Episode 2 Thumbnail" width="100%">
         <p><strong>Episode 2:</strong> Everyday Pidgin + Phrase Breakdown</p>
         <audio controls>
           <source src="https://raw.githubusercontent.com/ahuihouaku/ahuihou.github.io/main/pe2.m4a" type="audio/mpeg">
         </audio>
       </div>
-      <div class="podcast-entry">
-        <img src="https://raw.githubusercontent.com/ahuihouaku/ahuihou.github.io/main/pe3tn.png" alt="Episode 3 Thumbnail">
+      <div class="card">
+        <img src="https://raw.githubusercontent.com/ahuihouaku/ahuihou.github.io/main/pe3tn.png" alt="Episode 3 Thumbnail" width="100%">
         <p><strong>Episode 3:</strong> Pidgin in Real Tourist Settings</p>
         <audio controls>
           <source src="https://raw.githubusercontent.com/ahuihouaku/ahuihou.github.io/main/pe3.m4a" type="audio/mpeg">
@@ -226,19 +211,16 @@
       </div>
     </div>
   </section>
-
   <section id="about">
     <h3>🌈 About Me</h3>
     <p>Aloha, my name is Kirk, and I’ve been passionate about helping people for as long as I can remember. My very first job in high school was about supporting students — and that focus has followed me through every role I’ve had: part-time teacher, college planning advisor, college instructor, and more.</p>
-    <p>Travel has also been a huge part of my life. I’ve been exploring the world since I was a baby, but it was visiting places like Italy, France, Germany, Canada, Korea, and especially Japan that gave me a deeper understanding of what it means to be a guest in someone else’s home.</p>
-    <p>I created Aloha Insider to help travelers — especially those from Japan — experience the Hawaiʻi I know and love. Whether it’s your first visit or your tenth, I’m here to help you make the most of your trip, with local insights, cultural etiquette, and practical tips.</p>
+    <p>Travel has also been a huge part of my life. I’ve explored places like Italy, France, Germany, Canada, Korea, and especially Japan. I bring that same love for local culture into every trip I plan and every lesson I teach.</p>
+    <p>I created Aloha Insider so travelers — especially those from Japan — can experience the Hawaiʻi they dream of. Whether you’re visiting solo, with friends, or with kids, I’ll help you avoid tourist traps and plan something memorable.</p>
   </section>
-
   <section id="contact">
     <h3>📩 Contact Me</h3>
     <p>Email: <a href="mailto:kirkishida@alohainsider.net">kirkishida@alohainsider.net</a></p>
   </section>
-
   <footer>
     <p>&copy; 2025 Aloha Insider. All rights reserved.</p>
   </footer>
