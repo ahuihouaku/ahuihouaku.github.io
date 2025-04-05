@@ -34,19 +34,85 @@
       font-weight: bold;
       margin-bottom: 0.25rem;
     }
+    .back-button {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      background-color: #ffd89b;
+      color: #333;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+    .back-button:hover {
+      background-color: #ffc56c;
+    }
+    .sidebar {
+      position: absolute;
+      top: 100px;
+      left: 20px;
+      background: #fff;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      max-height: 70vh;
+      overflow-y: auto;
+      z-index: 1000;
+    }
+    .sidebar h2 {
+      font-size: 1.2rem;
+      margin-top: 0;
+    }
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+    }
+    .sidebar li {
+      margin: 0.5rem 0;
+      cursor: pointer;
+      color: #007BFF;
+      text-decoration: underline;
+    }
+    .sidebar button {
+      margin-top: 1rem;
+      background: #ffe4b5;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
   <header>
     <h1>🎬 Explore Oʻahu in Movies & TV</h1>
     <p>Click a marker to see famous filming locations across the island!</p>
+    <a class="back-button" href="index.html">← Back to Main Page</a>
   </header>
+
+  <div class="sidebar">
+    <h2>🎥 Filter by Title</h2>
+    <ul id="filterList"></ul>
+    <button onclick="resetMap()">Clear Filter</button>
+  </div>
 
   <div id="map"></div>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script>
-    const map = L.map('map').setView([21.4389, -157.9794], 10);
+    const southWest = L.latLng(18.5, -161.0);
+    const northEast = L.latLng(22.5, -154.5);
+    const bounds = L.latLngBounds(southWest, northEast);
+
+    const map = L.map('map', {
+      center: [21.4389, -157.9794],
+      zoom: 10,
+      minZoom: 7,
+      maxZoom: 18,
+      maxBounds: bounds,
+      maxBoundsViscosity: 1.0
+    });
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '© OpenStreetMap contributors'
@@ -56,34 +122,64 @@
       {
         title: "📽️ 50 First Dates",
         content: "Sea Life Park – where Henry first meets Lucy. <a href='https://goo.gl/maps/wZsbW1nbcCDzWmh49' target='_blank'>View on Google Maps</a>",
-        coords: [21.3131, -157.6645]
+        coords: [21.3131, -157.6645],
+        category: "50 First Dates"
       },
       {
         title: "🦖 Jurassic Park",
         content: "Kualoa Ranch – iconic valley scenes from the movie. <a href='https://goo.gl/maps/kXaa3nBuK2pF6qEE7' target='_blank'>View on Google Maps</a>",
-        coords: [21.5211, -157.8374]
+        coords: [21.5211, -157.8374],
+        category: "Jurassic Park"
       },
       {
         title: "🌺 Lilo & Stitch (inspiration)",
         content: "Hanapēpē Town on Kauaʻi, but Oʻahu’s North Shore inspired scenes too.",
-        coords: [21.6406, -158.065]
+        coords: [21.6406, -158.065],
+        category: "Lilo & Stitch"
       },
       {
         title: "🕵️ Hawaiʻi Five-O",
         content: "Aliʻiolani Hale – The headquarters seen in nearly every episode. <a href='https://goo.gl/maps/Ry4oYcYYwbWunbY1A' target='_blank'>View on Google Maps</a>",
-        coords: [21.3075, -157.8583]
+        coords: [21.3075, -157.8583],
+        category: "Hawaiʻi Five-O"
       },
       {
         title: "🌴 Lost",
         content: "Various beach scenes filmed near Mokulēʻia on the North Shore.",
-        coords: [21.5766, -158.2264]
+        coords: [21.5766, -158.2264],
+        category: "Lost"
       }
     ];
 
-    locations.forEach(loc => {
-      L.marker(loc.coords).addTo(map)
-        .bindPopup(`<div class='popup-title'>${loc.title}</div><div>${loc.content}</div>`);
-    });
+    const markers = [];
+
+    function showMarkers(filter) {
+      markers.forEach(m => map.removeLayer(m));
+      markers.length = 0;
+      locations.filter(loc => !filter || loc.category === filter).forEach(loc => {
+        const marker = L.marker(loc.coords).addTo(map)
+          .bindPopup(`<div class='popup-title'>${loc.title}</div><div>${loc.content}</div>`);
+        markers.push(marker);
+      });
+    }
+
+    function resetMap() {
+      showMarkers(null);
+    }
+
+    function buildFilterList() {
+      const categories = [...new Set(locations.map(loc => loc.category))];
+      const ul = document.getElementById("filterList");
+      categories.forEach(category => {
+        const li = document.createElement("li");
+        li.textContent = category;
+        li.onclick = () => showMarkers(category);
+        ul.appendChild(li);
+      });
+    }
+
+    buildFilterList();
+    showMarkers();
   </script>
 </body>
 </html>
