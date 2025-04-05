@@ -13,7 +13,7 @@
       padding: 0;
       color: #2c3e50;
       line-height: 1.7;
-      background-color: #fafafa;
+      background: linear-gradient(to bottom right, #fffef9, #fef6e4);
     }
     body::before {
       content: "";
@@ -25,7 +25,7 @@
       width: 100%;
       height: 100%;
       z-index: -3;
-      opacity: 0.15;
+      opacity: 0.1;
     }
     header.hero {
       height: 75vh;
@@ -67,40 +67,28 @@
       background-color: #fff0d5;
       border-radius: 8px;
     }
-    .info-bar {
+    .intro-section,
+    .podcast-scroll,
+    .lesson-scroll {
       display: flex;
       justify-content: center;
       gap: 2rem;
-      padding: 1rem;
-      background: #fff8dc;
-      font-weight: bold;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-    .intro-section {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 2rem;
+      flex-wrap: nowrap;
+      overflow-x: auto;
       padding: 3rem 2rem 1rem;
       background: #fff9ee;
     }
     .card {
-      background: #fff;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      background: #ffffffcc;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       padding: 1.5rem;
-      max-width: 300px;
-      flex: 1 1 300px;
+      min-width: 300px;
+      flex: 0 0 300px;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       opacity: 0;
       animation: fadeInUp 0.8s ease forwards;
     }
-    .card:nth-child(1) { animation-delay: 0.3s; }
-    .card:nth-child(2) { animation-delay: 0.6s; }
-    .card:nth-child(3) { animation-delay: 0.9s; }
     .card:hover {
       transform: translateY(-6px);
       box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
@@ -113,7 +101,7 @@
       padding: 3rem 2rem;
       max-width: 900px;
       margin: 3rem auto;
-      background: linear-gradient(135deg, #ffffff 0%, #f7f7f7 100%);
+      background: #ffffffbb;
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
       border-radius: 16px;
     }
@@ -134,21 +122,10 @@
       text-align: center;
       border-radius: 14px;
     }
-    .podcast-entry {
-      margin-bottom: 2rem;
-      text-align: center;
-    }
-    .podcast-entry img {
-      display: block;
-      margin: 0 auto 10px;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    }
   </style>
 </head>
 <body>
   <header class="hero"></header>
-
   <nav>
     <a href="#lessons"><i class="fa-solid fa-chalkboard-user"></i> Lessons</a>
     <a href="#newsletter"><i class="fa-regular fa-newspaper"></i> Newsletter</a>
@@ -157,12 +134,6 @@
     <a href="map.html"><i class="fa-solid fa-map-location-dot"></i> Hawai'i On Screen</a>
     <a href="#contact"><i class="fa-solid fa-envelope"></i> Contact</a>
   </nav>
-
-  <div class="info-bar">
-    <span id="time"><i class="fa-regular fa-clock"></i> Local Time: Loading...</span>
-    <span id="weather"><i class="fa-solid fa-cloud-sun"></i> Weather: Loading...</span>
-    <span id="surf"><i class="fa-solid fa-water"></i> Surf: Loading...</span>
-  </div>
 
   <section class="intro-section">
     <div class="card">
@@ -184,50 +155,47 @@
     </div>
   </section>
 
-  <section id="lessons">
-    <h3>🧠 Italki Lessons</h3>
-    <p>Join me on Italki to learn Hawaiian Pidgin, English with local flavor, and cultural do's and don'ts. Lessons are 1-on-1 and tailored to Japanese travelers and language lovers.</p>
-    <p><strong>🔗 <a href="https://www.italki.com/en/teacher/26705575">Book a lesson</a></strong></p>
-    <p><strong>🌟 Why Book With Me?</strong><br>
-    I’ve traveled the world, planned trips with friends, family, and now as a parent. I know the good spots, the hidden gems, and how to avoid wasting your time and money. I want you to experience Hawaiʻi the way locals do — with care, culture, and aloha.</p>
-  </section>
-
-  <section class="discount">
-    <h3>🎉 Direct Lessons = 10% Off!</h3>
-    <p>Book directly with me and save 10% compared to Italki pricing! Same high-quality lessons, just more aloha for your wallet 🌺</p>
-    <p><strong>Email: <a href="mailto:kirkishida@alohainsider.net">kirkishida@alohainsider.net</a></strong></p>
-  </section>
-
-  <section id="newsletter">
-    <h3>📬 Aloha Insider Newsletter</h3>
-    <p>Get insider tips on Hawaiian culture, local events, food, and hidden gems delivered every 2 weeks. Available in English & Japanese.</p>
-    <p><strong>🔗 <a href="#">Sign up here</a></strong></p>
-    <p><strong>📰 <a href="newsletter-march2025.html">Read the March 2025 Newsletter</a></strong></p>
+  <section class="lesson-scroll">
+    <div class="card discount">
+      <h3>🎉 Direct Lessons = 10% Off!</h3>
+      <p>Book directly with me and save 10% compared to Italki pricing! Same high-quality lessons, just more aloha for your wallet 🌺</p>
+      <p><strong>Email:</strong> <a href="mailto:kirkishida@alohainsider.net">kirkishida@alohainsider.net</a></p>
+    </div>
+    <div class="card">
+      <h3>🧠 Italki Lessons</h3>
+      <p>Join me on Italki to learn Hawaiian Pidgin, English with local flavor, and cultural do's and don'ts. Lessons are 1-on-1 and tailored to Japanese travelers and language lovers.</p>
+      <p><strong><a href="https://www.italki.com/en/teacher/26705575">Book a lesson</a></strong></p>
+    </div>
   </section>
 
   <section id="podcast">
     <h3>🎙️ Aloha Insider Podcast</h3>
-    <p>Listen to short episodes about Hawaiian Pidgin, culture, and travel — recorded to give you real local insights in just 2 minutes!</p>
-    <div class="podcast-entry">
-      <img src="https://raw.githubusercontent.com/ahuihouaku/ahuihou.github.io/main/episode%201%20thumbnail.png" alt="Episode 1 Thumbnail" width="200">
-      <p><strong>Episode 1:</strong> Intro to Hawaiian Pidgin</p>
-      <audio controls>
-        <source src="https://raw.githubusercontent.com/ahuihouaku/ahuihou.github.io/main/episode%201%20introduction.m4a" type="audio/mpeg">
-      </audio>
-    </div>
-    <div class="podcast-entry">
-      <img src="https://raw.githubusercontent.com/ahuihouaku/ahuihou.github.io/main/pe2tn.png" alt="Episode 2 Thumbnail" width="200">
-      <p><strong>Episode 2:</strong> Everyday Pidgin + Phrase Breakdown</p>
-      <audio controls>
-        <source src="https://raw.githubusercontent.com/ahuihouaku/ahuihou.github.io/main/pe2.m4a" type="audio/mpeg">
-      </audio>
-    </div>
-    <div class="podcast-entry">
-      <img src="https://raw.githubusercontent.com/ahuihouaku/ahuihou.github.io/main/pe3tn.png" alt="Episode 3 Thumbnail" width="200">
-      <p><strong>Episode 3:</strong> Pidgin in Real Tourist Settings</p>
-      <audio controls>
-        <source src="https://raw.githubusercontent.com/ahuihouaku/ahuihou.github.io/main/pe3.m4a" type="audio/mpeg">
-      </audio>
+    <p>Short episodes about Hawaiian Pidgin, culture, and travel — real local insight in 2 minutes!</p>
+    <div class="podcast-scroll">
+      <div class="card">
+        <img src="https://raw.githubusercontent.com/ahuihouaku/ahuihou.github.io/main/episode%201%20thumbnail.png" alt="Episode 1 Thumbnail" width="100%">
+        <h4>Episode 1</h4>
+        <p>Intro to Hawaiian Pidgin</p>
+        <audio controls>
+          <source src="https://raw.githubusercontent.com/ahuihouaku/ahuihou.github.io/main/episode%201%20introduction.m4a" type="audio/mpeg">
+        </audio>
+      </div>
+      <div class="card">
+        <img src="https://raw.githubusercontent.com/ahuihouaku/ahuihou.github.io/main/pe2tn.png" alt="Episode 2 Thumbnail" width="100%">
+        <h4>Episode 2</h4>
+        <p>Everyday Pidgin + Phrase Breakdown</p>
+        <audio controls>
+          <source src="https://raw.githubusercontent.com/ahuihouaku/ahuihou.github.io/main/pe2.m4a" type="audio/mpeg">
+        </audio>
+      </div>
+      <div class="card">
+        <img src="https://raw.githubusercontent.com/ahuihouaku/ahuihou.github.io/main/pe3tn.png" alt="Episode 3 Thumbnail" width="100%">
+        <h4>Episode 3</h4>
+        <p>Pidgin in Real Tourist Settings</p>
+        <audio controls>
+          <source src="https://raw.githubusercontent.com/ahuihouaku/ahuihou.github.io/main/pe3.m4a" type="audio/mpeg">
+        </audio>
+      </div>
     </div>
   </section>
 
@@ -247,35 +215,5 @@
   <footer>
     <p>&copy; 2025 Aloha Insider. All rights reserved.</p>
   </footer>
-
-  <script>
-    function updateTime() {
-      const now = new Date().toLocaleString("en-US", { timeZone: "Pacific/Honolulu" });
-      document.getElementById('time').innerHTML = `<i class='fa-regular fa-clock'></i> Local Time: ${now}`;
-    }
-    updateTime();
-    setInterval(updateTime, 60000);
-
-    async function updateWeather() {
-      try {
-        const res = await fetch('https://api.open-meteo.com/v1/forecast?latitude=21.3&longitude=-157.8&current_weather=true');
-        const data = await res.json();
-        const temp = data.current_weather.temperature;
-        document.getElementById('weather').innerHTML = `<i class='fa-solid fa-cloud-sun'></i> Weather: ${temp}°C`;
-      } catch {
-        document.getElementById('weather').innerHTML = "<i class='fa-solid fa-cloud-sun'></i> Weather: Unavailable";
-      }
-    }
-    updateWeather();
-
-    async function updateSurf() {
-      try {
-        document.getElementById('surf').innerHTML = "<i class='fa-solid fa-water'></i> Surf: Conditions Vary";
-      } catch {
-        document.getElementById('surf').innerHTML = "<i class='fa-solid fa-water'></i> Surf: Unavailable";
-      }
-    }
-    updateSurf();
-  </script>
 </body>
 </html>
