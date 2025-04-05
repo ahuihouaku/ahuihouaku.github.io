@@ -91,7 +91,7 @@
       padding: 3rem 2rem;
       max-width: 900px;
       margin: 3rem auto;
-      background: #ffffffbb;
+      background: linear-gradient(135deg, #ffffff, #f7f7f7);
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
       border-radius: 16px;
     }
@@ -103,7 +103,7 @@
       display: inline-block;
       padding-bottom: 0.3rem;
     }
-    .trip-plan {
+    .trip-planning {
       background-color: #fff8e1;
       border: 2px dashed #ffd54f;
       padding: 2rem;
@@ -111,7 +111,7 @@
       text-align: center;
       border-radius: 14px;
     }
-    .trip-plan a {
+    .trip-planning a {
       display: inline-block;
       background: #f57c00;
       color: white;
@@ -120,36 +120,40 @@
       font-weight: bold;
       text-decoration: none;
       margin-top: 1rem;
-      transition: background 0.3s ease;
     }
-    .trip-plan a:hover {
+    .trip-planning a:hover {
       background: #ef6c00;
+    }
+    .podcast-grid {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
     }
     .podcast-entry {
       background: #fff;
       border-radius: 12px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.05);
       padding: 1rem;
-      margin-bottom: 2rem;
+      width: 280px;
       display: flex;
       flex-direction: column;
       align-items: center;
     }
     .podcast-entry img {
-      width: 200px;
+      width: 100%;
       border-radius: 8px;
       margin-bottom: 1rem;
     }
     audio {
       width: 100%;
-      max-width: 300px;
     }
   </style>
 </head>
 <body>
   <header class="hero"></header>
   <nav>
-    <a href="#lessons"><i class="fa-solid fa-chalkboard-user"></i> Lessons</a>
+    <a href="#services"><i class="fa-solid fa-chalkboard-user"></i> Services</a>
     <a href="#newsletter"><i class="fa-regular fa-newspaper"></i> Newsletter</a>
     <a href="#podcast"><i class="fa-solid fa-podcast"></i> Podcast</a>
     <a href="#about"><i class="fa-solid fa-user"></i> About</a>
@@ -176,16 +180,16 @@
     </div>
   </section>
 
-  <section class="trip-plan">
-    <h3>🌺 Personalized Trip Planning – Save 10%</h3>
-    <p>Let us plan your perfect trip to Hawaiʻi! Avoid tourist traps and experience the islands like a local. Fill out our quick form to get started.</p>
+  <section class="trip-planning">
+    <h3>🌺 Book a Personalized Hawaiʻi Trip</h3>
+    <p>Let us help you plan the perfect Hawaiian adventure — authentic, local, and stress-free. Share your needs, and we’ll take care of the rest.</p>
     <a href="https://forms.gle/your-google-form-link" target="_blank">Plan My Trip</a>
   </section>
 
-  <section id="lessons">
-    <h3>🧠 Italki Lessons</h3>
-    <p>Join me on Italki to learn Hawaiian Pidgin, English with local flavor, and cultural do's and don'ts. Lessons are 1-on-1 and tailored to Japanese travelers and language lovers.</p>
-    <p><strong><a href="https://www.italki.com/en/teacher/26705575">Book a lesson</a></strong></p>
+  <section id="services">
+    <h3>🎓 Lessons & Travel Guidance</h3>
+    <p>Book 1-on-1 Italki lessons to learn Hawaiian Pidgin, English with local flavor, or get personalized advice for your visit.</p>
+    <p><strong><a href="https://www.italki.com/en/teacher/26705575">Book a lesson on Italki</a></strong></p>
   </section>
 
   <section id="newsletter">
@@ -198,26 +202,28 @@
   <section id="podcast">
     <h3>🎙️ Aloha Insider Podcast</h3>
     <p>Short episodes about Hawaiian Pidgin, culture, and travel — real local insight in 2 minutes!</p>
-    <div class="podcast-entry">
-      <img src="https://raw.githubusercontent.com/ahuihouaku/ahuihou.github.io/main/episode%201%20thumbnail.png" alt="Episode 1 Thumbnail">
-      <p><strong>Episode 1:</strong> Intro to Hawaiian Pidgin</p>
-      <audio controls>
-        <source src="https://raw.githubusercontent.com/ahuihouaku/ahuihou.github.io/main/episode%201%20introduction.m4a" type="audio/mpeg">
-      </audio>
-    </div>
-    <div class="podcast-entry">
-      <img src="https://raw.githubusercontent.com/ahuihouaku/ahuihou.github.io/main/pe2tn.png" alt="Episode 2 Thumbnail">
-      <p><strong>Episode 2:</strong> Everyday Pidgin + Phrase Breakdown</p>
-      <audio controls>
-        <source src="https://raw.githubusercontent.com/ahuihouaku/ahuihou.github.io/main/pe2.m4a" type="audio/mpeg">
-      </audio>
-    </div>
-    <div class="podcast-entry">
-      <img src="https://raw.githubusercontent.com/ahuihouaku/ahuihou.github.io/main/pe3tn.png" alt="Episode 3 Thumbnail">
-      <p><strong>Episode 3:</strong> Pidgin in Real Tourist Settings</p>
-      <audio controls>
-        <source src="https://raw.githubusercontent.com/ahuihouaku/ahuihou.github.io/main/pe3.m4a" type="audio/mpeg">
-      </audio>
+    <div class="podcast-grid">
+      <div class="podcast-entry">
+        <img src="https://raw.githubusercontent.com/ahuihouaku/ahuihou.github.io/main/episode%201%20thumbnail.png" alt="Episode 1 Thumbnail">
+        <p><strong>Episode 1:</strong> Intro to Hawaiian Pidgin</p>
+        <audio controls>
+          <source src="https://raw.githubusercontent.com/ahuihouaku/ahuihou.github.io/main/episode%201%20introduction.m4a" type="audio/mpeg">
+        </audio>
+      </div>
+      <div class="podcast-entry">
+        <img src="https://raw.githubusercontent.com/ahuihouaku/ahuihou.github.io/main/pe2tn.png" alt="Episode 2 Thumbnail">
+        <p><strong>Episode 2:</strong> Everyday Pidgin + Phrase Breakdown</p>
+        <audio controls>
+          <source src="https://raw.githubusercontent.com/ahuihouaku/ahuihou.github.io/main/pe2.m4a" type="audio/mpeg">
+        </audio>
+      </div>
+      <div class="podcast-entry">
+        <img src="https://raw.githubusercontent.com/ahuihouaku/ahuihou.github.io/main/pe3tn.png" alt="Episode 3 Thumbnail">
+        <p><strong>Episode 3:</strong> Pidgin in Real Tourist Settings</p>
+        <audio controls>
+          <source src="https://raw.githubusercontent.com/ahuihouaku/ahuihou.github.io/main/pe3.m4a" type="audio/mpeg">
+        </audio>
+      </div>
     </div>
   </section>
 
