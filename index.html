@@ -18,7 +18,6 @@
       line-height: 1.6;
     }
 
-    /* Background image with soft white + blur overlay */
     body::before {
       content: "";
       background: url('https://raw.githubusercontent.com/ahuihouaku/ahuihou.github.io/main/background.png') no-repeat center center fixed;
@@ -43,14 +42,13 @@
       z-index: -2;
     }
 
-    /* Parallax Hero Section */
     header.hero {
       height: 75vh;
       background-image: url('https://raw.githubusercontent.com/ahuihouaku/ahuihou.github.io/main/hero.png');
       background-attachment: fixed;
-       background-size: contain;
-    background-repeat: no-repeat;
-        background-position: top center;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: top center;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -59,18 +57,7 @@
       color: white;
       position: relative;
     }
-/*
-    header.hero::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(255, 255, 255, 0.6);
-      z-index: 1;
-    }
-*/
+
     nav {
       background: #ffe4b5;
       display: flex;
@@ -118,24 +105,22 @@
       font-size: 1.1rem;
     }
 
+    .podcast-entry {
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .podcast-entry img {
+      display: block;
+      margin: 0 auto 10px;
+      border-radius: 8px;
+    }
+
     footer {
       background: #ddd;
       text-align: center;
       padding: 1rem;
       font-size: 0.9rem;
-    }
-
-    .podcast-section {
-      text-align: center;
-      padding: 2rem;
-      margin: 3rem 0;
-    }
-
-    .podcast-section img {
-      width: 200px;
-      height: 200px;
-      object-fit: cover;
-      margin-bottom: 20px;
     }
   </style>
 </head>
@@ -146,6 +131,7 @@
     <a href="#lessons">Lessons</a>
     <a href="#newsletter">Newsletter</a>
     <a href="#tips">Travel Tips</a>
+    <a href="#podcast">Podcast</a>
     <a href="#contact">Contact</a>
   </nav>
 
@@ -165,9 +151,7 @@
     <h3>📬 Aloha Insider Newsletter</h3>
     <p>Get insider tips on Hawaiian culture, local events, food, and hidden gems delivered every 2 weeks. Available in English & Japanese.</p>
     <p><strong>🔗 <a href="#">Sign up here</a></strong></p>
-    <section class="section" id="newsletter">
-  <p><strong>📰 <a href="newsletter-march2025.html">Read the March 2025 Newsletter</a></strong></p>
-</section>
+    <p><strong>📰 <a href="newsletter-march2025.html">Read the March 2025 Newsletter</a></strong></p>
   </section>
 
   <section class="section" id="tips">
@@ -175,31 +159,41 @@
     <p>Learn what locals wish tourists knew — elevator etiquette, driving rules, when to wave shaka, and more!</p>
   </section>
 
+  <section class="section" id="podcast">
+    <h3>🎙️ Aloha Insider Podcast</h3>
+    <p>Listen to short episodes about Hawaiian Pidgin, culture, and travel — recorded to give you real local insights in just 2 minutes!</p>
+
+    <div class="podcast-entry">
+      <img src="https://raw.githubusercontent.com/ahuihouaku/ahuihou.github.io/main/episode%201%20thumbnail.png" alt="Episode 1 Thumbnail" width="200">
+      <p><strong>Episode 1:</strong> Intro to Hawaiian Pidgin</p>
+      <audio controls>
+        <source src="https://raw.githubusercontent.com/ahuihouaku/ahuihou.github.io/main/episode%201%20introduction.m4a" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+    </div>
+
+    <div class="podcast-entry">
+      <img src="https://raw.githubusercontent.com/ahuihouaku/ahuihou.github.io/main/pe2tn.png" alt="Episode 2 Thumbnail" width="200">
+      <p><strong>Episode 2:</strong> Everyday Pidgin + Phrase Breakdown</p>
+      <audio controls>
+        <source src="https://raw.githubusercontent.com/ahuihouaku/ahuihou.github.io/main/pe2.m4a" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+    </div>
+
+    <div class="podcast-entry">
+      <img src="https://raw.githubusercontent.com/ahuihouaku/ahuihou.github.io/main/pe3tn.png" alt="Episode 3 Thumbnail" width="200">
+      <p><strong>Episode 3:</strong> Pidgin in Real Tourist Settings</p>
+      <audio controls>
+        <source src="https://raw.githubusercontent.com/ahuihouaku/ahuihou.github.io/main/pe3.m4a" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+    </div>
+  </section>
+
   <section class="section" id="contact">
     <h3>📩 Contact Me</h3>
     <p>Email: <a href="mailto:kirkishida@alohainsider.net">kirkishida@alohainsider.net</a></p>
-  </section>
-
-  <section class="podcast-section" id="podcast">
-    <img src="https://raw.githubusercontent.com/ahuihouaku/ahuihou.github.io/main/episode%201%20thumbnail.png" alt="Episode 1 Thumbnail">
-    <audio controls>
-      <source src="https://raw.githubusercontent.com/ahuihouaku/ahuihou.github.io/main/episode%201%20introduction.m4a" type="audio/mpeg">
-      Your browser does not support the audio element.
-    </audio>
-  </section>
-    <section class="podcast-section" id="podcast">
-    <img src="https://raw.githubusercontent.com/ahuihouaku/ahuihou.github.io/main/pe2tn.png" alt="Episode 2 Thumbnail">
-    <audio controls>
-      <source src="https://raw.githubusercontent.com/ahuihouaku/ahuihou.github.io/main/pe2.m4a" type="audio/mpeg">
-      Your browser does not support the audio element.
-    </audio>
-  </section>
-    <section class="podcast-section" id="podcast">
-    <img src="https://raw.githubusercontent.com/ahuihouaku/ahuihou.github.io/main/pe3tn.png" alt="Episode 3 Thumbnail">
-    <audio controls>
-      <source src="https://raw.githubusercontent.com/ahuihouaku/ahuihou.github.io/main/pe3.m4a" type="audio/mpeg">
-      Your browser does not support the audio element.
-    </audio>
   </section>
 
   <footer>
