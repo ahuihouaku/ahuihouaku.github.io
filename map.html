@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explore Oʻahu – Famous Filming Locations</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <style>
+    body {
+      font-family: 'Quicksand', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fdfcf8;
+      color: #333;
+    }
+    header {
+      background: #ffe4b5;
+      padding: 1.5rem;
+      text-align: center;
+    }
+    h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+    #map {
+      height: 90vh;
+      width: 100%;
+    }
+    .leaflet-popup-content {
+      font-size: 0.95rem;
+      line-height: 1.4;
+    }
+    .popup-title {
+      font-weight: bold;
+      margin-bottom: 0.25rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🎬 Explore Oʻahu in Movies & TV</h1>
+    <p>Click a marker to see famous filming locations across the island!</p>
+  </header>
+
+  <div id="map"></div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+    const map = L.map('map').setView([21.4389, -157.9794], 10);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
+
+    const locations = [
+      {
+        title: "📽️ 50 First Dates",
+        content: "Sea Life Park – where Henry first meets Lucy. <a href='https://goo.gl/maps/wZsbW1nbcCDzWmh49' target='_blank'>View on Google Maps</a>",
+        coords: [21.3131, -157.6645]
+      },
+      {
+        title: "🦖 Jurassic Park",
+        content: "Kualoa Ranch – iconic valley scenes from the movie. <a href='https://goo.gl/maps/kXaa3nBuK2pF6qEE7' target='_blank'>View on Google Maps</a>",
+        coords: [21.5211, -157.8374]
+      },
+      {
+        title: "🌺 Lilo & Stitch (inspiration)",
+        content: "Hanapēpē Town on Kauaʻi, but Oʻahu’s North Shore inspired scenes too.",
+        coords: [21.6406, -158.065]
+      },
+      {
+        title: "🕵️ Hawaiʻi Five-O",
+        content: "Aliʻiolani Hale – The headquarters seen in nearly every episode. <a href='https://goo.gl/maps/Ry4oYcYYwbWunbY1A' target='_blank'>View on Google Maps</a>",
+        coords: [21.3075, -157.8583]
+      },
+      {
+        title: "🌴 Lost",
+        content: "Various beach scenes filmed near Mokulēʻia on the North Shore.",
+        coords: [21.5766, -158.2264]
+      }
+    ];
+
+    locations.forEach(loc => {
+      L.marker(loc.coords).addTo(map)
+        .bindPopup(`<div class='popup-title'>${loc.title}</div><div>${loc.content}</div>`);
+    });
+  </script>
+</body>
+</html>
