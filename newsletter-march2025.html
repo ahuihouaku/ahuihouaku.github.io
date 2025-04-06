@@ -13,6 +13,28 @@
       padding: 2rem;
       color: #333;
     }
+    nav {
+      background: #ffe4b5;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      padding: 1rem 0;
+      margin-bottom: 2rem;
+      border-radius: 8px;
+    }
+    nav a {
+      color: #2c3e50;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 0.5rem 1rem;
+      transition: all 0.3s ease;
+    }
+    nav a:hover,
+    nav a.active {
+      background-color: #fff0d5;
+      border-radius: 8px;
+    }
     .newsletter {
       max-width: 800px;
       margin: auto;
@@ -47,6 +69,16 @@
   </style>
 </head>
 <body>
+  <nav>
+    <a href="/index.html">Home</a>
+    <a href="/trip-planning">Trip Planning</a>
+    <a href="/lessons">Lessons</a>
+    <a href="/newsletter">Newsletter</a>
+    <a href="/podcast">Podcast</a>
+    <a href="/about">About</a>
+    <a href="/contact">Contact</a>
+  </nav>
+
   <div class="newsletter">
     <h2>🌺 Aloha Insider Newsletter – March 2025 Edition</h2>
     <p><em>Discover Hawaiian culture, events, travel tips, and local flavors in this month's Aloha Insider!</em></p>
