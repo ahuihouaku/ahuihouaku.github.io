@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>初めてのハワイ旅行ガイド | Aloha Insider</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Quicksand', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom right, #fffef9, #fef6e4);
+      color: #2c3e50;
+      line-height: 1.7;
+    }
+    body::before {
+      content: "";
+      background: url('https://raw.githubusercontent.com/ahuihouaku/ahuihou.github.io/main/background.png') no-repeat center center fixed;
+      background-size: cover;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -3;
+      opacity: 0.1;
+    }
+    header.hero {
+      height: 70vh;
+      background-image: url('https://raw.githubusercontent.com/ahuihouaku/ahuihou.github.io/main/hero.png');
+      background-attachment: fixed;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      position: relative;
+    }
+    header.hero h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: 2.5rem;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 1rem;
+      border-radius: 12px;
+    }
+    nav {
+      background: #ffe4b5;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    nav a {
+      color: #2c3e50;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 0.5rem 1rem;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    nav a:hover,
+    nav a.active {
+      background-color: #fff0d5;
+      border-radius: 8px;
+    }
+    .first-time-banner {
+      background-color:#fff7db;
+      text-align:center;
+      padding: 1.2rem 1rem;
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: #bf360c;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .first-time-banner a {
+      color: #f57c00;
+      text-decoration: underline;
+    }
+    .jp-discount {
+      background: #f1fef7;
+      padding: 1.2rem;
+      text-align: center;
+      font-size: 1rem;
+      color: #00796b;
+      font-weight: bold;
+      border-top: 2px dashed #80cbc4;
+      border-bottom: 2px dashed #80cbc4;
+    }
+    .jp-discount a {
+      display: inline-block;
+      margin-top: 0.5rem;
+      color: #00796b;
+      text-decoration: underline;
+    }
+    #discount-banner {
+      display: none;
+      background-color: #fff3cd;
+      color: #856404;
+      text-align: center;
+      padding: 1rem;
+      font-size: 1rem;
+      margin: 1rem auto;
+      max-width: 900px;
+      border-radius: 12px;
+      border: 1px solid #ffeeba;
+    }
+    .tip {
+      background: #fff8e1;
+      padding: 1rem;
+      border-left: 5px solid #ffa726;
+      margin: 1rem auto;
+      max-width: 900px;
+      border-radius: 10px;
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+    .tip input[type="checkbox"] {
+      margin-top: 6px;
+      transform: scale(1.2);
+    }
+  </style>
+  <script>
+    function showDiscountBanner() {
+      const banner = document.getElementById('discount-banner');
+      if (banner.style.display !== 'block') {
+        banner.style.display = 'block';
+      }
+    }
+
+    window.addEventListener('DOMContentLoaded', function() {
+      const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+      checkboxes.forEach(cb => {
+        cb.addEventListener('change', function() {
+          if (cb.checked) {
+            showDiscountBanner();
+          }
+        });
+      });
+    });
+  </script>
+</head>
+<body>
+  <header class="hero">
+    <h1>初めてのハワイ旅行ガイド 🌴</h1>
+  </header>
+  <nav>
+    <a href="/index.html">ホーム</a>
+    <a href="/trip-planning">旅行プラン</a>
+    <a href="/lessons">レッスン</a>
+    <a href="/newsletter">ニュースレター</a>
+    <a href="/podcast">ポッドキャスト</a>
+    <a href="/about">私たちについて</a>
+    <a href="/contact">お問い合わせ</a>
+  </nav>
+
+  <div class="first-time-banner">
+    🌴 初めてのハワイ旅行ですか？観光客向けの落とし穴を避けるための簡単なガイドをご紹介します。
+    <a href="hawaii-travel-guide.html">無料ガイドを見る</a> 🤙
+  </div>
+
+  <div class="jp-discount">
+    このページを読めた方は<strong>10%割引</strong>が受けられます！このページを提示してください。<br>
+    <a href="japanese-travel-guide.html">👉 日本語版を見る</a><br>
+    <em>※クーポンは併用できません。</em>
+  </div>
+
+  <div id="discount-banner">
+    🎉 最初のチェックボックスをクリックしました！<strong>5%割引</strong>が適用されます！<em>※クーポンは併用できません。</em>
+  </div>
+
+  <section class="tip"><input type="checkbox"><div><h3>🍱 機内食は機外に持ち出さない</h3><p>国際線で来る方は、機内食を機外に持ち出さないでください！機内で食べるか、残しましょう。お好みのスナックは現地で探すお手伝いをします。</p></div></section>
+  <section class="tip"><input type="checkbox"><div><h3>💵 チップのマナー</h3><p>良いサービスには15〜20%程度で十分です。過度なチップは不要。テイクアウトではチップ不要です。</p></div></section>
+  <section class="tip"><input type="checkbox"><div><h3>🚫 声をかけられたら注意</h3><p>道端で声をかけられても、丁寧に断りましょう。中には詐欺や高額なサービスの勧誘もあります。</p></div></section>
+  <section class="tip"><input type="checkbox"><div><h3>🏨 ホテル料金とチップ</h3><p>リゾート料金がかかることがあります。ハウスキーピングには毎日少額のチップを。タオル追加などにもチップを渡すと喜ばれます。</p></div></section>
+  <section class="tip"><input type="checkbox"><div><h3>🚗 交通手段のメリット・デメリット</h3><p>バスは時間がかかります。ライドシェアは郊外で少ないです。駐車場も少ないため、効率の良い移動手段を提案します。</p></div></section>
+  <section class="tip"><input type="checkbox"><div><h3>🌧 雨の日の代替プラン</h3><p>ハワイでは雨もあります。雨天時の室内アクティビティも提案できます。</p></div></section>
+  <section class="tip"><input type="checkbox"><div><h3>🍔 人気店より地元グルメ</h3><p>テレビで紹介されている店が必ずしも美味しいとは限りません。本当に地元の人が通う店をご紹介します。</p></div></section>
+  <section class="tip"><input type="checkbox"><div><h3>📍 ホテルの立地選び</h3><p>どこでも予約していい訳ではありません。交通状況も加味して、ご希望に合ったエリアをご案内します。</p></div></section>
+  <section class="tip"><input type="checkbox"><div><h3>📅 混雑を避けるタイミング</h3><p>週末は混雑します。平日の訪問をおすすめし、効率よく観光できるようお手伝いします。</p></div></section>
+  <section class="tip"><input type="checkbox"><div><h3>⛽ ガソリン代と駐車場</h3><p>ガソリン代は高めです。駐車場も限られているため、事前の調整が大切です。</p></div></section>
+  <section class="tip"><input type="checkbox"><div><h3>🌊 安全第一</h3><p>全てのビーチやハイキングが安全とは限りません。一部の「名所」は観光客向けの罠かもしれません。本当に行く価値のある場所をご案内します。</p></div></section>
+  <section class="tip"><input type="checkbox"><div><h3>🔗 カスタムプランのご案内</h3><p>地元の視点で、時間・お金・ストレスを減らす旅のご提案をしています。ぜひご利用ください！</p></div></section>
+
+  <footer>
+    © 2025 Aloha Insider | アロハを込めて 🌺
+  </footer>
+</body>
+</html>
