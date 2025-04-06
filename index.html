@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Aloha Insider</title>
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -112,6 +112,57 @@
       color: #00796b;
       text-decoration: underline;
     }
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      padding: 0.8rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+    .contact-form button {
+      background-color: #fbc02d;
+      color: #2c3e50;
+      padding: 0.8rem 1.2rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .contact-form button:hover {
+      background-color: #f57c00;
+      color: white;
+    }
+    .floating-book {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #ff7043;
+      color: white;
+      padding: 0.8rem 1.2rem;
+      border-radius: 50px;
+      font-size: 1rem;
+      font-weight: bold;
+      z-index: 999;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+    .floating-book:hover {
+      background-color: #e64a19;
+    }
+    @media (min-width: 768px) {
+      .floating-book {
+        display: none;
+      }
+    }
   </style>
 </head>
 <body>
@@ -139,7 +190,7 @@
   <section id="trip-planning">
     <h3>🌴 Trip Planning Services</h3>
     <p>Get personalized help planning your dream Hawaiʻi trip! Whether you're a solo traveler, couple, or a family, I’ll help design an itinerary that fits your budget and interests.</p>
-    <p><a href="https://forms.gle/qdudX8heCpLtqg3J6" target="_blank">Start Planning Now</a></p>
+    <p><a href="https://forms.gle/qdudX8heCpLtqg3J6" target="_blank" class="floating-book">Book Now</a></p>
   </section>
 
   <section id="lessons">
@@ -148,29 +199,21 @@
     <p><a href="https://www.italki.com/en/teacher/26705575" target="_blank">Book a Lesson on Italki</a></p>
   </section>
 
-<section id="newsletter">
-  <h3>📬 Aloha Insider Newsletter</h3>
-  <p>Get insider tips on Hawaiian culture, local events, food, and hidden gems delivered every month. Available in English & Japanese.</p>
+  <section id="newsletter">
+    <h3>📬 Aloha Insider Newsletter</h3>
+    <p>Get insider tips on Hawaiian culture, local events, food, and hidden gems delivered every month. Available in English & Japanese.</p>
 
-  <section style="background: #fff7db; padding: 2rem; border-radius: 12px; max-width: 800px; margin: 2rem auto; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
-    <h2 style="color: #bf360c; font-size: 1.8rem;">📬 Subscribe to Aloha Insider</h2>
-    <p style="margin-bottom: 1.5rem;">Get handpicked Hawaiian travel tips, local food spots, and hidden gems — in English & Japanese, twice a month.</p>
-    <iframe 
-      src="https://embeds.beehiiv.com/831efa5b-90c9-4422-90e8-a80f170d43d0" 
-      data-test-id="beehiiv-embed" 
-      width="100%" 
-      height="320" 
-      frameborder="0" 
-      scrolling="no" 
-      style="border-radius: 8px; border: 2px solid #fbc02d; background-color: transparent;">
-    </iframe>
+    <section style="background: #fff7db; padding: 2rem; border-radius: 12px; max-width: 800px; margin: 2rem auto; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+      <h2 style="color: #bf360c; font-size: 1.8rem;">📬 Subscribe to Aloha Insider</h2>
+      <p style="margin-bottom: 1.5rem;">Get handpicked Hawaiian travel tips, local food spots, and hidden gems — in English & Japanese, twice a month.</p>
+      <iframe src="https://embeds.beehiiv.com/831efa5b-90c9-4422-90e8-a80f170d43d0" data-test-id="beehiiv-embed" width="100%" height="320" frameborder="0" scrolling="no" style="border-radius: 8px; border: 2px solid #fbc02d; background-color: transparent;"></iframe>
+    </section>
+
+    <p style="text-align: center; margin-top: 2rem;">
+      <strong>📰 <a href="newsletter-march2025.html">Read the March 2025 Newsletter</a></strong><br>
+      <strong>📰 <a href="newsletter-april2025.html">Read the April 2025 Newsletter</a></strong>
+    </p>
   </section>
-
-  <p style="text-align: center; margin-top: 2rem;">
-    <strong>📰 <a href="newsletter-march2025.html">Read the March 2025 Newsletter</a></strong><br>
-    <strong>📰 <a href="newsletter-april2025.html">Read the April 2025 Newsletter</a></strong>
-  </p>
-</section>
 
   <section id="podcast">
     <h3>🎙️ Podcast: Speak Hawaii</h3>
@@ -182,13 +225,16 @@
     </ul>
   </section>
 
-  <section id="about">
-    <h3>🌈 About Me</h3>
-    <p>Aloha, my name is Kirk, and I’ve been passionate about helping people for as long as I can remember. My very first job in high school was about supporting students — and that focus has followed me through every role I’ve had: part-time teacher, college planning advisor, college instructor, and more. Whether it’s guiding someone through their education or helping them feel confident in a new place, I’ve always loved being part of someone’s journey.</p>
-    <p>Travel has also been a huge part of my life. I’ve been exploring the world since I was a baby, but it was visiting places like Italy, France, Germany, Canada, Korea, and especially Japan that gave me a deeper understanding of what it means to be a guest in someone else’s home. I loved learning about local customs, trying new foods, and seeing how culture shapes daily life — and I bring that same mindset to helping visitors experience Hawaiʻi.</p>
-    <p>I created Aloha Insider because I want travelers — especially those visiting from Japan — to have the kind of experience they dream about when they imagine Hawaiʻi. Yes, it’s a beautiful place, but like any destination, there are things people might not know: high prices, tourist traps, tipping confusion, unsafe areas, or spending time and money in places that aren’t worth it.</p>
-    <p>As a parent, I’ve also discovered a whole new side of travel — one I never fully appreciated before. I now know how important it is to plan trips that include zoos, aquariums, safe beaches, playgrounds, and quiet family moments. I’ve traveled for nightlife with friends, cultural exploration, and now as a family. Because of that, I understand the different ways people experience Hawaiʻi, and I can help plan the perfect trip for any kind of traveler — whether it’s solo, with friends, or with kids in tow.</p>
-  </section>
+<section id="about">
+  <h3>🌈 About Me</h3>
+  <p>Aloha, my name is Kirk, and I’ve been passionate about helping people for as long as I can remember. My very first job in high school was about supporting students — and that focus has followed me through every role I’ve had: part-time teacher, college planning advisor, college instructor, and more. Whether it’s guiding someone through their education or helping them feel confident in a new place, I’ve always loved being part of someone’s journey.</p>
+
+  <p>Travel has also been a huge part of my life. I’ve been exploring the world since I was a baby, but it was visiting places like Italy, France, Germany, Canada, Korea, and especially Japan that gave me a deeper understanding of what it means to be a guest in someone else’s home. I loved learning about local customs, trying new foods, and seeing how culture shapes daily life — and I bring that same mindset to helping visitors experience Hawaiʻi.</p>
+
+  <p>I created Aloha Insider because I want travelers — especially those visiting from Japan — to have the kind of experience they dream about when they imagine Hawaiʻi. Yes, it’s a beautiful place, but like any destination, there are things people might not know: high prices, tourist traps, tipping confusion, unsafe areas, or spending time and money in places that aren’t worth it.</p>
+
+  <p>As a parent, I’ve also discovered a whole new side of travel — one I never fully appreciated before. I now know how important it is to plan trips that include zoos, aquariums, safe beaches, playgrounds, and quiet family moments. I’ve traveled for nightlife with friends, cultural exploration, and now as a family. Because of that, I understand the different ways people experience Hawaiʻi, and I can help plan the perfect trip for any kind of traveler — whether it’s solo, with friends, or with kids in tow.</p>
+</section>
 
   <section id="contact">
     <h3>📩 Contact</h3>
@@ -204,12 +250,15 @@
       <textarea id="message" name="message" rows="5" required></textarea>
 
       <input type="text" name="_gotcha" style="display:none">
-
       <button type="submit">Send Message</button>
     </form>
   </section>
+
+  <a href="https://forms.gle/qdudX8heCpLtqg3J6" class="floating-book">Book Now</a>
+
   <footer>
-        &copy; 2025 Aloha Insider | Made with Aloha 🌺
+    &copy; 2025 Aloha Insider | Made with Aloha 🌺
   </footer>
 </body>
 </html>
+
