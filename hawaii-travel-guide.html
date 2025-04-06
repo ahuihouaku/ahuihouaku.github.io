@@ -73,31 +73,53 @@
       background-color: #fff0d5;
       border-radius: 8px;
     }
-    .read-banner {
-      background-color: #fff3cd;
-      padding: 1rem;
-      text-align: center;
-      font-weight: bold;
+    .first-time-banner {
+      background-color:#fff7db;
+      text-align:center;
+      padding: 1.2rem 1rem;
       font-size: 1.1rem;
-      color: #8a6d3b;
+      font-weight: bold;
+      color: #bf360c;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
-    section {
-      padding: 2rem 1.5rem;
+    .first-time-banner a {
+      color: #f57c00;
+      text-decoration: underline;
+    }
+    .jp-discount {
+      background: #f1fef7;
+      padding: 1.2rem;
+      text-align: center;
+      font-size: 1rem;
+      color: #00796b;
+      font-weight: bold;
+      border-top: 2px dashed #80cbc4;
+      border-bottom: 2px dashed #80cbc4;
+    }
+    .jp-discount a {
+      display: inline-block;
+      margin-top: 0.5rem;
+      color: #00796b;
+      text-decoration: underline;
+    }
+    #discount-banner {
+      display: none;
+      background-color: #fff3cd;
+      color: #856404;
+      text-align: center;
+      padding: 1rem;
+      font-size: 1rem;
+      margin: 1rem auto;
       max-width: 900px;
-      margin: 2rem auto;
-      background: #ffffff;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-      border-radius: 16px;
-    }
-    h2 {
-      color: #e2725b;
-      margin-top: 2rem;
+      border-radius: 12px;
+      border: 1px solid #ffeeba;
     }
     .tip {
       background: #fff8e1;
       padding: 1rem;
       border-left: 5px solid #ffa726;
-      margin-bottom: 1.5rem;
+      margin: 1rem auto;
+      max-width: 900px;
       border-radius: 10px;
       display: flex;
       align-items: flex-start;
@@ -107,34 +129,25 @@
       margin-top: 6px;
       transform: scale(1.2);
     }
-    #reward-banner {
-      display: none;
-      background-color: #d4edda;
-      color: #155724;
-      font-weight: bold;
-      text-align: center;
-      padding: 1.5rem;
-      font-size: 1.1rem;
-      margin: 1rem auto;
-      max-width: 900px;
-      border: 2px solid #c3e6cb;
-      border-radius: 12px;
-    }
-    footer {
-      background: #ffe4b5;
-      text-align: center;
-      padding: 1.5rem;
-      font-size: 0.9rem;
-      color: #2c3e50;
-    }
   </style>
   <script>
-    function checkAllRead() {
-      const checkboxes = document.querySelectorAll('.tip input[type="checkbox"]');
-      const rewardBanner = document.getElementById('reward-banner');
-      const allChecked = Array.from(checkboxes).every(cb => cb.checked);
-      rewardBanner.style.display = allChecked ? 'block' : 'none';
+    function showDiscountBanner() {
+      const banner = document.getElementById('discount-banner');
+      if (banner.style.display !== 'block') {
+        banner.style.display = 'block';
+      }
     }
+
+    window.addEventListener('DOMContentLoaded', function() {
+      const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+      checkboxes.forEach(cb => {
+        cb.addEventListener('change', function() {
+          if (cb.checked) {
+            showDiscountBanner();
+          }
+        });
+      });
+    });
   </script>
 </head>
 <body>
@@ -151,75 +164,32 @@
     <a href="/contact">Contact</a>
   </nav>
 
-  <div class="read-banner">
-    ✅ If you read through and check off all these tips, you'll unlock a special rate! Just show this screen. 💸
+  <div class="first-time-banner">
+    🌴 First time to Hawaiʻi? Want a simple guide to avoid tourist traps and confusion? 
+    <a href="hawaii-travel-guide.html">Click here for a FREE basic guide</a> 🤙
   </div>
 
-  <section>
-    <div class="tip"><input type="checkbox" onchange="checkAllRead()">
-      <div><h2>🍱 Don't Bring Airline Food Off the Plane</h2>
-      <p>International flyers: don’t bring food off the plane! Eat it or leave it. I can help you find your favorite snacks locally.</p></div>
-    </div>
-
-    <div class="tip"><input type="checkbox" onchange="checkAllRead()">
-      <div><h2>💵 Tipping in Hawaii</h2>
-      <p>Tip 15–20% max for great service. No need to overtip. No tip needed for takeout orders.</p></div>
-    </div>
-
-    <div class="tip"><input type="checkbox" onchange="checkAllRead()">
-      <div><h2>🚫 Be Wary of People Approaching You</h2>
-      <p>If approached with offers (rides, events), kindly decline. Some are scams or overpriced.</p></div>
-    </div>
-
-    <div class="tip"><input type="checkbox" onchange="checkAllRead()">
-      <div><h2>🏨 Hotel Fees & Tips</h2>
-      <p>Expect resort fees. Tip housekeeping daily – especially at the start. Tip a few dollars for extra towels or requests.</p></div>
-    </div>
-
-    <div class="tip"><input type="checkbox" onchange="checkAllRead()">
-      <div><h2>🚗 Transportation Pros & Cons</h2>
-      <p>Buses = slow. Rideshare = limited in rural spots. Parking is tough. I’ll help plan your route efficiently.</p></div>
-    </div>
-
-    <div class="tip"><input type="checkbox" onchange="checkAllRead()">
-      <div><h2>🌧 Rainy Day Backup</h2>
-      <p>It rains in Hawaiʻi! I help plan indoor alternatives to avoid wasted days.</p></div>
-    </div>
-
-    <div class="tip"><input type="checkbox" onchange="checkAllRead()">
-      <div><h2>🍔 Food Hype vs. Local Gems</h2>
-      <p>TV spots can be overrated or overpriced. I’ll recommend where locals really eat.</p></div>
-    </div>
-
-    <div class="tip"><input type="checkbox" onchange="checkAllRead()">
-      <div><h2>📍 Choosing the Right Hotel Area</h2>
-      <p>Don’t just book anywhere – traffic is real. I’ll guide you to areas that match your goals and budget.</p></div>
-    </div>
-
-    <div class="tip"><input type="checkbox" onchange="checkAllRead()">
-      <div><h2>📅 Avoid Busy Tourist Times</h2>
-      <p>Weekend crowds are intense. I help plan weekday visits to top attractions.</p></div>
-    </div>
-
-    <div class="tip"><input type="checkbox" onchange="checkAllRead()">
-      <div><h2>⛽ Gas & Parking</h2>
-      <p>Gas = $$$. Parking = limited. I’ll help you navigate smarter.</p></div>
-    </div>
-
-    <div class="tip"><input type="checkbox" onchange="checkAllRead()">
-      <div><h2>🌊 Safety First</h2>
-      <p>Not all beaches or hikes are safe. Some “historic sites” are tourist traps. I’ll tell you what’s worth your time.</p></div>
-    </div>
-
-    <div class="tip"><input type="checkbox" onchange="checkAllRead()">
-      <div><h2>🔗 Book a Custom Plan</h2>
-      <p>Want a local’s help? I offer personalized plans to save time, money & avoid headaches. Book today!</p></div>
-    </div>
-  </section>
-
-  <div id="reward-banner">
-    🎉 You’ve checked off all the tips! Mention this for 10% off trip planning services! 🎉
+  <div class="jp-discount">
+    日本語を読めますか？ このページの日本語版を読めた方は、<strong>10%割引</strong>が適用されます！<br>
+    <a href="japanese-travel-guide.html">👉 日本語ガイドを見る</a>
   </div>
+
+  <div id="discount-banner">
+    🎉 Nice! You’ve clicked your first checkbox — you’re now eligible for <strong>5% off</strong> trip planning services! <em>Coupons do not stack.</em>
+  </div>
+
+  <section class="tip"><input type="checkbox"><div><h3>🍱 Don't Bring Airline Food Off the Plane</h3><p>International flyers: don’t bring food off the plane! Eat it or leave it. I can help you find your favorite snacks locally.</p></div></section>
+  <section class="tip"><input type="checkbox"><div><h3>💵 Tipping in Hawaii</h3><p>Tip 15–20% max for great service. No need to overtip. No tip needed for takeout orders.</p></div></section>
+  <section class="tip"><input type="checkbox"><div><h3>🚫 Be Wary of People Approaching You</h3><p>If approached with offers (rides, events), kindly decline. Some are scams or overpriced.</p></div></section>
+  <section class="tip"><input type="checkbox"><div><h3>🏨 Hotel Fees & Tips</h3><p>Expect resort fees. Tip housekeeping daily – especially at the start. Tip a few dollars for extra towels or requests.</p></div></section>
+  <section class="tip"><input type="checkbox"><div><h3>🚗 Transportation Pros & Cons</h3><p>Buses = slow. Rideshare = limited in rural spots. Parking is tough. I’ll help plan your route efficiently.</p></div></section>
+  <section class="tip"><input type="checkbox"><div><h3>🌧 Rainy Day Backup</h3><p>It rains in Hawaiʻi! I help plan indoor alternatives to avoid wasted days.</p></div></section>
+  <section class="tip"><input type="checkbox"><div><h3>🍔 Food Hype vs. Local Gems</h3><p>TV spots can be overrated or overpriced. I’ll recommend where locals really eat.</p></div></section>
+  <section class="tip"><input type="checkbox"><div><h3>📍 Choosing the Right Hotel Area</h3><p>Don’t just book anywhere – traffic is real. I’ll guide you to areas that match your goals and budget.</p></div></section>
+  <section class="tip"><input type="checkbox"><div><h3>📅 Avoid Busy Tourist Times</h3><p>Weekend crowds are intense. I help plan weekday visits to top attractions.</p></div></section>
+  <section class="tip"><input type="checkbox"><div><h3>⛽ Gas & Parking</h3><p>Gas = $$$. Parking = limited. I’ll help you navigate smarter.</p></div></section>
+  <section class="tip"><input type="checkbox"><div><h3>🌊 Safety First</h3><p>Not all beaches or hikes are safe. Some “historic sites” are tourist traps. I’ll tell you what’s worth your time.</p></div></section>
+  <section class="tip"><input type="checkbox"><div><h3>🔗 Book a Custom Plan</h3><p>Want a local’s help? I offer personalized plans to save time, money & avoid headaches. Book today!</p></div></section>
 
   <footer>
     © 2025 Aloha Insider | Made with Aloha 🌺
