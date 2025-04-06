@@ -83,89 +83,34 @@
       display: inline-block;
       padding-bottom: 0.3rem;
     }
-    .trip-planning {
-      background-color: #fff8e1;
-      border: 2px dashed #ffd54f;
-      padding: 2rem;
-      margin-bottom: 2rem;
+    .first-time-banner {
+      background-color:#fff7db;
+      text-align:center;
+      padding: 1.2rem 1rem;
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: #bf360c;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .first-time-banner a {
+      color: #f57c00;
+      text-decoration: underline;
+    }
+    .jp-discount {
+      background: #f1fef7;
+      padding: 1.2rem;
       text-align: center;
-      border-radius: 14px;
+      font-size: 1rem;
+      color: #00796b;
+      font-weight: bold;
+      border-top: 2px dashed #80cbc4;
+      border-bottom: 2px dashed #80cbc4;
     }
-    .trip-planning a {
+    .jp-discount a {
       display: inline-block;
-      background: #f57c00;
-      color: white;
-      padding: 0.8rem 1.5rem;
-      border-radius: 10px;
-      font-weight: bold;
-      text-decoration: none;
-      margin-top: 1rem;
-    }
-    .trip-planning a:hover {
-      background: #ef6c00;
-    }
-    .intro-section {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 1rem;
-      padding: 3rem 1rem 1rem;
-      background: #fff9ee;
-    }
-    .card {
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      padding: 1.5rem;
-      flex: 1 1 calc(33.333% - 1rem);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      animation: fadeInUp 0.8s ease forwards;
-      opacity: 0;
-    }
-    @media (max-width: 768px) {
-      .card {
-        flex: 1 1 100%;
-      }
-    }
-    .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
-    }
-    @keyframes fadeInUp {
-      0% { opacity: 0; transform: translateY(20px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
-    .contact-form {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      margin-top: 1rem;
-    }
-    .contact-form label {
-      font-weight: bold;
-      color: #333;
-    }
-    .contact-form input,
-    .contact-form textarea {
-      padding: 0.75rem;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-      font-size: 1rem;
-      font-family: inherit;
-    }
-    .contact-form button {
-      background-color: #f57c00;
-      color: white;
-      padding: 0.8rem 1.2rem;
-      border: none;
-      border-radius: 8px;
-      font-size: 1rem;
-      font-weight: bold;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-    .contact-form button:hover {
-      background-color: #ef6c00;
+      margin-top: 0.5rem;
+      color: #00796b;
+      text-decoration: underline;
     }
   </style>
 </head>
@@ -180,76 +125,43 @@
     <a href="map.html"><i class="fa-solid fa-map-location-dot"></i> Hawaiʻi Film Locations</a>
     <a href="#contact"><i class="fa-solid fa-envelope"></i> Contact</a>
   </nav>
-   <div style="background-color:#fff7db; text-align:center; padding: 1.2rem 1rem; font-size: 1.1rem; font-weight: bold; color: #bf360c; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+
+  <div class="first-time-banner">
     🌴 First time to Hawaiʻi? Want a simple guide to avoid tourist traps and confusion? 
-    <a href="hawaii-travel-guide.html" style="color: #f57c00; text-decoration: underline;">Click here for a FREE basic guide</a> 🤙
+    <a href="hawaii-travel-guide.html">Click here for a FREE basic guide</a> 🤙
   </div>
 
-  <section class="intro-section">
-    <div class="card">
-      <h3>🌿 Hawaiian Word of the Month</h3>
-      <p><strong>E Komo Mai</strong> – "Welcome"</p>
-      <p>日本語: 「ようこそ」</p>
-      <p>This phrase reflects the spirit of aloha you’ll see on welcome mats, hotels, and signs across Hawaiʻi.</p>
-    </div>
-    <div class="card">
-      <h3>🎉 Featured Event: Merrie Monarch Festival</h3>
-      <p><strong>📅 Date:</strong> April 2025<br><strong>📍 Location:</strong> Hilo, Hawaiʻi Island</p>
-      <p>The biggest celebration of hula and Hawaiian culture. Hula competitions, art fairs, and a grand parade.</p>
-      <p><a href="https://www.merriemonarch.com/" target="_blank">View Festival Info</a></p>
-    </div>
-    <div class="card">
-      <h3>🤙 Why Aloha Insider?</h3>
-      <p>We’re not about tourist traps. We help you travel smarter, eat better, learn local customs, and connect with the real Hawaiʻi.</p>
-      <p>Guided by a local Native Hawaiian educator and travel expert. 🌈</p>
-    </div>
-  </section>
+  <div class="jp-discount">
+    日本語を読めますか？ このページの日本語版を読めた方は、<strong>10%割引</strong>が適用されます！<br>
+    <a href="japanese-travel-guide.html">👉 日本語ガイドを見る</a>
+  </div>
 
-  <section id="trip-planning" class="trip-planning">
-    <h3>🌴 Plan Your Perfect Trip to Hawaiʻi</h3>
-    <p>Want a customized experience based on your interests, time, and budget? Let me help you design a unique Hawaiʻi trip, whether it's your first visit or you're coming back for more!</p>
-    <a href="https://forms.gle/qdudX8heCpLtqg3J6" target="_blank">Start Trip Planning</a>
+  <section id="trip-planning">
+    <h3>🌴 Trip Planning Services</h3>
+    <p>Get personalized help planning your dream Hawaiʻi trip! Whether you're a solo traveler, couple, or a family, I’ll help design an itinerary that fits your budget and interests.</p>
+    <p><a href="https://forms.gle/qdudX8heCpLtqg3J6" target="_blank">Start Planning Now</a></p>
   </section>
 
   <section id="lessons">
-    <h3>📘 Lessons</h3>
-    <p>Join me to learn Hawaiian Pidgin, travel tips, or everyday English with local culture. Lessons are personalized for Japanese travelers and anyone who wants to understand the real Hawaiʻi.</p>
-    <p><strong>🔗 <a href="https://www.italki.com/en/teacher/26705575">Book on Italki</a></strong></p>
+    <h3>📘 Language & Culture Lessons</h3>
+    <p>Learn Hawaiian Pidgin, local etiquette, and useful travel English in easy, fun lessons designed especially for visitors from Japan.</p>
+    <p><a href="https://www.italki.com/en/teacher/26705575" target="_blank">Book a Lesson on Italki</a></p>
   </section>
 
   <section id="newsletter">
     <h3>📬 Aloha Insider Newsletter</h3>
-    <p>Get insider tips on Hawaiian culture, local events, food, and hidden gems delivered every 2 weeks. Available in English & Japanese.</p>
-    <p><strong>🔗 <a href="#">Sign up here</a></strong></p>
-    <p><strong>📰 <a href="newsletter-march2025.html">Read the March 2025 Newsletter</a></strong></p>
+    <p>Twice a month, receive handpicked tips, events, Hawaiian words, and food recommendations straight to your inbox in English & Japanese.</p>
+    <p><a href="#">Sign Up Here</a></p>
   </section>
 
   <section id="podcast">
-    <h3>🎙️ Aloha Insider Podcast</h3>
-    <p>Short 2-minute episodes giving you a taste of Hawaiian culture, Pidgin, and travel tips.</p>
-    <div style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;">
-      <div class="podcast-entry">
-        <img src="https://raw.githubusercontent.com/ahuihouaku/ahuihou.github.io/main/episode%201%20thumbnail.png" alt="Episode 1 Thumbnail" width="160">
-        <p><strong>Episode 1:</strong> Intro to Hawaiian Pidgin</p>
-        <audio controls>
-          <source src="https://raw.githubusercontent.com/ahuihouaku/ahuihou.github.io/main/episode%201%20introduction.m4a" type="audio/mpeg">
-        </audio>
-      </div>
-      <div class="podcast-entry">
-        <img src="https://raw.githubusercontent.com/ahuihouaku/ahuihou.github.io/main/pe2tn.png" alt="Episode 2 Thumbnail" width="160">
-        <p><strong>Episode 2:</strong> Everyday Pidgin + Phrase Breakdown</p>
-        <audio controls>
-          <source src="https://raw.githubusercontent.com/ahuihouaku/ahuihou.github.io/main/pe2.m4a" type="audio/mpeg">
-        </audio>
-      </div>
-      <div class="podcast-entry">
-        <img src="https://raw.githubusercontent.com/ahuihouaku/ahuihou.github.io/main/pe3tn.png" alt="Episode 3 Thumbnail" width="160">
-        <p><strong>Episode 3:</strong> Pidgin in Real Tourist Settings</p>
-        <audio controls>
-          <source src="https://raw.githubusercontent.com/ahuihouaku/ahuihou.github.io/main/pe3.m4a" type="audio/mpeg">
-        </audio>
-      </div>
-    </div>
+    <h3>🎙️ Podcast: Speak Hawaii</h3>
+    <p>Listen to short 2-minute episodes introducing Hawaiian Pidgin, culture, and travel tips. Great for brushing up before your trip!</p>
+    <ul>
+      <li><a href="https://raw.githubusercontent.com/ahuihouaku/ahuihou.github.io/main/episode%201%20introduction.m4a">Episode 1: Intro to Hawaiian Pidgin</a></li>
+      <li><a href="https://raw.githubusercontent.com/ahuihouaku/ahuihou.github.io/main/pe2.m4a">Episode 2: Everyday Pidgin + Phrase Breakdown</a></li>
+      <li><a href="https://raw.githubusercontent.com/ahuihouaku/ahuihou.github.io/main/pe3.m4a">Episode 3: Pidgin in Tourist Settings</a></li>
+    </ul>
   </section>
 
   <section id="about">
@@ -261,8 +173,8 @@
   </section>
 
   <section id="contact">
-    <h3>📩 Contact Me</h3>
-    <p>Have a question, collaboration idea, or need help planning your trip to Hawaiʻi? Fill out the form below and I’ll get back to you soon!</p>
+    <h3>📩 Contact</h3>
+    <p>Have questions or want to collaborate? Fill out the form below!</p>
     <form action="https://formspree.io/f/mnnpoapb" method="POST" class="contact-form">
       <label for="name">Name</label>
       <input type="text" id="name" name="name" required>
