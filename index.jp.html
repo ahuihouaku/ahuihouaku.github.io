@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>アロハインサイダー | ハワイ旅行ガイド</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    body {font-family: 'Quicksand', sans-serif; margin:0; padding:0; color:#2c3e50; line-height:1.7; background: linear-gradient(to bottom right, #fffef9, #fef6e4);}
+    header.hero {height:75vh; background:url('https://raw.githubusercontent.com/ahuihouaku/ahuihou.github.io/main/hero.png') fixed center top/contain no-repeat;}
+    nav{background:#ffe4b5;display:flex;justify-content:center;gap:1.5rem;padding:1rem;position:sticky;top:0;}
+    nav a{color:#2c3e50;text-decoration:none;font-weight:bold;padding:0.5rem 1rem;transition:.3s;display:flex;align-items:center;gap:0.5rem;}
+    nav a:hover,nav a.active{background:#fff0d5;border-radius:8px;}
+    section{padding:3rem 2rem;max-width:900px;margin:auto;background:#fffef9;border-radius:16px;box-shadow:0 8px 24px rgba(0,0,0,0.08);}
+    h3{border-bottom:2px solid #ffe4b5;display:inline-block;padding-bottom:.3rem;}
+    .banner{background:#fff7db;padding:1.2rem;text-align:center;font-weight:bold;color:#bf360c;}
+    .cta-btn{background:#f57c00;color:#fff;padding:0.8rem 2rem;text-decoration:none;border-radius:10px;font-weight:bold;box-shadow:0 4px 12px rgba(0,0,0,0.15);}
+  </style>
+</head>
+<body>
+
+<header class="hero"></header>
+
+<nav>
+  <a href="#trip-planning"><i class="fa-solid fa-map-signs"></i>旅行プラン</a>
+  <a href="#newsletter"><i class="fa-regular fa-newspaper"></i>ニュースレター</a>
+  <a href="#lessons"><i class="fa-solid fa-chalkboard-user"></i>レッスン</a>
+  <a href="#podcast"><i class="fa-solid fa-podcast"></i>ポッドキャスト</a>
+  <a href="#about"><i class="fa-solid fa-user"></i>自己紹介</a>
+  <a href="map.html"><i class="fa-solid fa-map-location-dot"></i>ハワイ映画ロケ地</a>
+  <a href="#contact"><i class="fa-solid fa-envelope"></i>お問い合わせ</a>
+</nav>
+
+<div class="banner">
+  🌴初めてのハワイ旅行ですか？ 観光トラブルを避ける無料のシンプルガイドをゲット！
+  <a href="hawaii-travel-guide-jp.html">無料ガイドはこちら</a> 🤙
+</div>
+
+<section id="trip-planning">
+  <h3>🌴 ハワイ旅行の完全オーダーメイドプラン</h3>
+  <p>旅行の日程、目的、人数に合わせてあなただけのハワイ旅行プランを作ります。</p>
+  <ul>
+    <li>✔️ 観光地の混雑を回避、時間とお金の節約</li>
+    <li>✔️ 雨の日のバックアップ、ローカル情報、隠れスポット紹介</li>
+    <li>✔️ プレミアムプラン限定のローカル割引あり</li>
+  </ul>
+  <a href="https://forms.gle/qdudX8heCpLtqg3J6" target="_blank" class="cta-btn">✍️ 今すぐ計画スタート</a>
+</section>
+
+<section id="newsletter">
+  <h3>📬 アロハインサイダーニュースレター</h3>
+  <p>ハワイの旅行ヒント、イベント情報、地元料理を月2回お届け！</p>
+  <iframe src="https://embeds.beehiiv.com/831efa5b-90c9-4422-90e8-a80f170d43d0" width="100%" height="320"></iframe>
+</section>
+
+<section id="lessons">
+  <h3>📘 ハワイの文化＆英語レッスン</h3>
+  <p>ハワイアンピジン英語や地元のマナーを楽しく簡単に学びましょう！</p>
+  <p><a href="https://www.italki.com/en/teacher/26705575" target="_blank">🎓 Italkiで予約する</a></p>
+</section>
+
+<section id="podcast">
+  <h3>🎙️ ポッドキャスト：Speak Hawaii</h3>
+  <p>ハワイアンピジンや旅行のヒントを約2分で楽しめるポッドキャスト。</p>
+  <ul>
+    <li><a href="#">第1話：ハワイアンピジンとは？</a></li>
+    <li><a href="#">第2話：日常会話編</a></li>
+    <li><a href="#">第3話：観光フレーズ編</a></li>
+  </ul>
+</section>
+
+<section id="about">
+  <h3>🌈 自己紹介</h3>
+  <p>アロハ！ハワイ生まれ育ちのKirkです。日本、イタリアなど世界各地を旅して、ローカルのガイドがどれほど心強いかを実感しました。地元ならではの情報をお伝えして、あなたのハワイ旅行を特別なものにします。</p>
+</section>
+
+<section id="contact">
+  <h3>📩 お問い合わせ</h3>
+  <p>質問や相談など、お気軽にご連絡ください！</p>
+  <form action="https://formspree.io/f/mnnpoapb" method="POST">
+    <input type="text" name="name" placeholder="お名前" required>
+    <input type="email" name="_replyto" placeholder="メールアドレス" required>
+    <textarea name="message" placeholder="メッセージ" required></textarea>
+    <button type="submit">送信する</button>
+  </form>
+</section>
+
+<footer>&copy;2025 Aloha Insider | アロハと共に🌺</footer>
+</body>
+</html>
